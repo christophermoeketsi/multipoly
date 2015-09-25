@@ -219,12 +219,12 @@ public class Notification extends BaseUmlgCompositionNode implements UmlgRestlet
 	
 	@Override
 	public void fromJsonDataTypeAndComposite(Map<String,Object> propertyMap) {
-		if ( propertyMap.containsKey("Content") ) {
-			if ( propertyMap.get("Content") != null ) {
-				String Content = (String)propertyMap.get("Content");
-				setContent(Content);
+		if ( propertyMap.containsKey("Name") ) {
+			if ( propertyMap.get("Name") != null ) {
+				String Name = (String)propertyMap.get("Name");
+				setName(Name);
 			} else {
-				setContent(null);
+				setName(null);
 			}
 		}
 		if ( propertyMap.containsKey("Message") ) {
@@ -235,12 +235,12 @@ public class Notification extends BaseUmlgCompositionNode implements UmlgRestlet
 				setMessage(null);
 			}
 		}
-		if ( propertyMap.containsKey("Name") ) {
-			if ( propertyMap.get("Name") != null ) {
-				String Name = (String)propertyMap.get("Name");
-				setName(Name);
+		if ( propertyMap.containsKey("Content") ) {
+			if ( propertyMap.get("Content") != null ) {
+				String Content = (String)propertyMap.get("Content");
+				setContent(Content);
 			} else {
-				setName(null);
+				setContent(null);
 			}
 		}
 		if ( propertyMap.containsKey("tmpId") ) {
@@ -354,16 +354,16 @@ public class Notification extends BaseUmlgCompositionNode implements UmlgRestlet
 		}
 		if ( runtimeProperty != null && result == 0 ) {
 			switch ( runtimeProperty ) {
-				case Content:
-					result = Content.size();
+				case Name:
+					result = Name.size();
 					break;
 			
 				case Message:
 					result = Message.size();
 					break;
 			
-				case Name:
-					result = Name.size();
+				case Content:
+					result = Content.size();
 					break;
 			
 				default:
@@ -407,9 +407,9 @@ public class Notification extends BaseUmlgCompositionNode implements UmlgRestlet
 	
 	@Override
 	public void initialiseProperties() {
-		this.Content =  new UmlgSetImpl<String>(this, NotificationRuntimePropertyEnum.Content);
-		this.Message =  new UmlgSetImpl<String>(this, NotificationRuntimePropertyEnum.Message);
 		this.Name =  new UmlgSetImpl<String>(this, NotificationRuntimePropertyEnum.Name);
+		this.Message =  new UmlgSetImpl<String>(this, NotificationRuntimePropertyEnum.Message);
+		this.Content =  new UmlgSetImpl<String>(this, NotificationRuntimePropertyEnum.Content);
 	}
 	
 	@Override
@@ -422,16 +422,16 @@ public class Notification extends BaseUmlgCompositionNode implements UmlgRestlet
 		}
 		if ( runtimeProperty != null ) {
 			switch ( runtimeProperty ) {
-				case Content:
-					this.Content =  new UmlgSetImpl<String>(this, NotificationRuntimePropertyEnum.Content);
+				case Name:
+					this.Name =  new UmlgSetImpl<String>(this, NotificationRuntimePropertyEnum.Name);
 					break;
 			
 				case Message:
 					this.Message =  new UmlgSetImpl<String>(this, NotificationRuntimePropertyEnum.Message);
 					break;
 			
-				case Name:
-					this.Name =  new UmlgSetImpl<String>(this, NotificationRuntimePropertyEnum.Name);
+				case Content:
+					this.Content =  new UmlgSetImpl<String>(this, NotificationRuntimePropertyEnum.Content);
 					break;
 			
 			}
@@ -526,11 +526,11 @@ public class Notification extends BaseUmlgCompositionNode implements UmlgRestlet
 		}
 		sb.append("\"id\": \"" + getId() + "\", ");
 		sb.append("\"metaNodeId\": \"" + getMetaNode().getId() + "\", ");
-		sb.append("\"Content\": " + (getContent() != null ? "\"" + StringEscapeUtils.escapeJson(getContent()) + "\"" : null ));
+		sb.append("\"Name\": " + (getName() != null ? "\"" + StringEscapeUtils.escapeJson(getName()) + "\"" : null ));
 		sb.append(", ");
 		sb.append("\"Message\": " + (getMessage() != null ? "\"" + StringEscapeUtils.escapeJson(getMessage()) + "\"" : null ));
 		sb.append(", ");
-		sb.append("\"Name\": " + (getName() != null ? "\"" + StringEscapeUtils.escapeJson(getName()) + "\"" : null ));
+		sb.append("\"Content\": " + (getContent() != null ? "\"" + StringEscapeUtils.escapeJson(getContent()) + "\"" : null ));
 		sb.append(", ");
 		sb.append("\"qualifiedName\": \"" + getQualifiedName() + "\"");
 		sb.append(", ");
@@ -558,11 +558,11 @@ public class Notification extends BaseUmlgCompositionNode implements UmlgRestlet
 		}
 		sb.append("\"id\": \"" + getId() + "\", ");
 		sb.append("\"metaNodeId\": \"" + getMetaNode().getId() + "\", ");
-		sb.append("\"Content\": " + (getContent() != null ? "\"" + StringEscapeUtils.escapeJson(getContent()) + "\"" : null ));
+		sb.append("\"Name\": " + (getName() != null ? "\"" + StringEscapeUtils.escapeJson(getName()) + "\"" : null ));
 		sb.append(", ");
 		sb.append("\"Message\": " + (getMessage() != null ? "\"" + StringEscapeUtils.escapeJson(getMessage()) + "\"" : null ));
 		sb.append(", ");
-		sb.append("\"Name\": " + (getName() != null ? "\"" + StringEscapeUtils.escapeJson(getName()) + "\"" : null ));
+		sb.append("\"Content\": " + (getContent() != null ? "\"" + StringEscapeUtils.escapeJson(getContent()) + "\"" : null ));
 		sb.append(", ");
 		sb.append("\"qualifiedName\": \"" + getQualifiedName() + "\"");
 		sb.append(", ");
@@ -590,14 +590,14 @@ public class Notification extends BaseUmlgCompositionNode implements UmlgRestlet
 	@Override
 	public List<UmlgConstraintViolation> validateMultiplicities() {
 		List<UmlgConstraintViolation> result = new ArrayList<UmlgConstraintViolation>();
-		if ( getContent() == null ) {
-			result.add(new UmlgConstraintViolation("multiplicity", "RootElement::org::multipoly::Notification::Notification::Content", "lower multiplicity is 1"));
+		if ( getName() == null ) {
+			result.add(new UmlgConstraintViolation("multiplicity", "RootElement::org::multipoly::Notification::Notification::Name", "lower multiplicity is 1"));
 		}
 		if ( getMessage() == null ) {
 			result.add(new UmlgConstraintViolation("multiplicity", "RootElement::org::multipoly::Notification::Notification::Message", "lower multiplicity is 1"));
 		}
-		if ( getName() == null ) {
-			result.add(new UmlgConstraintViolation("multiplicity", "RootElement::org::multipoly::Notification::Notification::Name", "lower multiplicity is 1"));
+		if ( getContent() == null ) {
+			result.add(new UmlgConstraintViolation("multiplicity", "RootElement::org::multipoly::Notification::Notification::Content", "lower multiplicity is 1"));
 		}
 		return result;
 	}
@@ -608,9 +608,9 @@ public class Notification extends BaseUmlgCompositionNode implements UmlgRestlet
 	}
 
 	static public enum NotificationRuntimePropertyEnum implements UmlgRuntimeProperty {
-		Content(/* qualifiedName */ "RootElement::org::multipoly::Notification::Notification::Content",/* persistentName */ "Content",/* inverseName */ "inverseOf::Content",/* inverseQualifiedName */ "inverseOf::RootElement::org::multipoly::Notification::Notification::Content",/* isAssociationClassOne */ false,/* isMemberEndOfAssociationClass */ false,/* associationClassPropertyNameField */ "null",/* inverseAssociationClassPropertyNameField */ "null",/* isAssociationClassProperty */ false,/* isOnePrimitivePropertyOfAssociationClass */ false,/* isOnePrimitive */ true,/* isReadOnly */ false,/* dataTypeEnum */ null,/* validations */ Collections.<UmlgValidation>emptyList(),/* isManyPrimitive */ false,/* oneEnumeration */ false,/* manyEnumeration */ false,/* isControllingSide */ true,/* isComposite */ false,/* isInverseComposite */ false,/* label */ UmlgLabelConverterFactory.getUmlgLabelConverter().convert("Content"),/* isOneToOne */ false,/* isOneToMany */ false,/* isManyToOne */ true,/* isManyToMany */ false,/* upper */ 1,/* lower */ 1,/* inverseUpper */ 1,/* isQualified */ false,/* isInverseQualified */ false,/* isOrdered */ false,/* isInverseOrdered */ false,/* isUnique */ true,/* isInverseUnique */ false,/* isDerived */ false,/* isNavigable */ true,/* propertyType */ String.class,/* json */ "{\"name\": \"Content\", \"associationClassOne\": false, \"memberEndOfAssociationClass\": false, \"associationClassPropertyName\": null, \"inverseAssociationClassPropertyName\": null, \"associationClassProperty\": false, \"onePrimitivePropertyOfAssociationClass\": false, \"onePrimitive\": true, \"readOnly\": false, \"dataTypeEnum\": null, \"validations\": null, \"qualifiedName\": \"RootElement::org::multipoly::Notification::Notification::Content\", \"persistentName\": \"Content\", \"inverseName\": \"inverseOf::Content\", \"inverseQualifiedName\": \"inverseOf::RootElement::org::multipoly::Notification::Notification::Content\", \"manyPrimitive\": false, \"oneEnumeration\": false, \"manyEnumeration\": false, \"controllingSide\": true, \"composite\": false, \"inverseComposite\": false, \"oneToOne\": false, \"oneToMany\": false, \"manyToOne\": true, \"manyToMany\": false, \"upper\": 1, \"lower\": 1, \"inverseUpper\": 1, \"label\": \"Content\", \"qualified\": false, \"inverseQualified\": false, \"ordered\": false, \"inverseOrdered\": false, \"unique\": true, \"inverseUnique\": false, \"derived\": false, \"navigable\": true, \"tumlUri\": \"/RootElement/notifications/{notificationId}/Content\", \"tumlOverloadedPostUri\": \"/RootElement/overloadedpost/notifications/{notificationId}/Content\", \"tumlMetaDataUri\": \"/RootElement/stringMetaData\", \"fieldType\": \"" + FieldType.String + "\"}",/* isChangeListenerAttribute */ false,/* tumlUri */ "/RootElement/notifications/{notificationId}/Content",/* tumlOverloadedPostUri */ "/RootElement/overloadedpost/notifications/{notificationId}/Content",/* tumlMetaDataUri */ "/RootElement/stringMetaData",/* fieldType */ FieldType.String),
-		Message(/* qualifiedName */ "RootElement::org::multipoly::Notification::Notification::Message",/* persistentName */ "Message",/* inverseName */ "inverseOf::Message",/* inverseQualifiedName */ "inverseOf::RootElement::org::multipoly::Notification::Notification::Message",/* isAssociationClassOne */ false,/* isMemberEndOfAssociationClass */ false,/* associationClassPropertyNameField */ "null",/* inverseAssociationClassPropertyNameField */ "null",/* isAssociationClassProperty */ false,/* isOnePrimitivePropertyOfAssociationClass */ false,/* isOnePrimitive */ true,/* isReadOnly */ false,/* dataTypeEnum */ null,/* validations */ Collections.<UmlgValidation>emptyList(),/* isManyPrimitive */ false,/* oneEnumeration */ false,/* manyEnumeration */ false,/* isControllingSide */ true,/* isComposite */ false,/* isInverseComposite */ false,/* label */ UmlgLabelConverterFactory.getUmlgLabelConverter().convert("Message"),/* isOneToOne */ false,/* isOneToMany */ false,/* isManyToOne */ true,/* isManyToMany */ false,/* upper */ 1,/* lower */ 1,/* inverseUpper */ 1,/* isQualified */ false,/* isInverseQualified */ false,/* isOrdered */ false,/* isInverseOrdered */ false,/* isUnique */ true,/* isInverseUnique */ false,/* isDerived */ false,/* isNavigable */ true,/* propertyType */ String.class,/* json */ "{\"name\": \"Message\", \"associationClassOne\": false, \"memberEndOfAssociationClass\": false, \"associationClassPropertyName\": null, \"inverseAssociationClassPropertyName\": null, \"associationClassProperty\": false, \"onePrimitivePropertyOfAssociationClass\": false, \"onePrimitive\": true, \"readOnly\": false, \"dataTypeEnum\": null, \"validations\": null, \"qualifiedName\": \"RootElement::org::multipoly::Notification::Notification::Message\", \"persistentName\": \"Message\", \"inverseName\": \"inverseOf::Message\", \"inverseQualifiedName\": \"inverseOf::RootElement::org::multipoly::Notification::Notification::Message\", \"manyPrimitive\": false, \"oneEnumeration\": false, \"manyEnumeration\": false, \"controllingSide\": true, \"composite\": false, \"inverseComposite\": false, \"oneToOne\": false, \"oneToMany\": false, \"manyToOne\": true, \"manyToMany\": false, \"upper\": 1, \"lower\": 1, \"inverseUpper\": 1, \"label\": \"Message\", \"qualified\": false, \"inverseQualified\": false, \"ordered\": false, \"inverseOrdered\": false, \"unique\": true, \"inverseUnique\": false, \"derived\": false, \"navigable\": true, \"tumlUri\": \"/RootElement/notifications/{notificationId}/Message\", \"tumlOverloadedPostUri\": \"/RootElement/overloadedpost/notifications/{notificationId}/Message\", \"tumlMetaDataUri\": \"/RootElement/stringMetaData\", \"fieldType\": \"" + FieldType.String + "\"}",/* isChangeListenerAttribute */ false,/* tumlUri */ "/RootElement/notifications/{notificationId}/Message",/* tumlOverloadedPostUri */ "/RootElement/overloadedpost/notifications/{notificationId}/Message",/* tumlMetaDataUri */ "/RootElement/stringMetaData",/* fieldType */ FieldType.String),
 		Name(/* qualifiedName */ "RootElement::org::multipoly::Notification::Notification::Name",/* persistentName */ "Name",/* inverseName */ "inverseOf::Name",/* inverseQualifiedName */ "inverseOf::RootElement::org::multipoly::Notification::Notification::Name",/* isAssociationClassOne */ false,/* isMemberEndOfAssociationClass */ false,/* associationClassPropertyNameField */ "null",/* inverseAssociationClassPropertyNameField */ "null",/* isAssociationClassProperty */ false,/* isOnePrimitivePropertyOfAssociationClass */ false,/* isOnePrimitive */ true,/* isReadOnly */ false,/* dataTypeEnum */ null,/* validations */ Collections.<UmlgValidation>emptyList(),/* isManyPrimitive */ false,/* oneEnumeration */ false,/* manyEnumeration */ false,/* isControllingSide */ true,/* isComposite */ false,/* isInverseComposite */ false,/* label */ UmlgLabelConverterFactory.getUmlgLabelConverter().convert("Name"),/* isOneToOne */ false,/* isOneToMany */ false,/* isManyToOne */ true,/* isManyToMany */ false,/* upper */ 1,/* lower */ 1,/* inverseUpper */ 1,/* isQualified */ false,/* isInverseQualified */ false,/* isOrdered */ false,/* isInverseOrdered */ false,/* isUnique */ true,/* isInverseUnique */ false,/* isDerived */ false,/* isNavigable */ true,/* propertyType */ String.class,/* json */ "{\"name\": \"Name\", \"associationClassOne\": false, \"memberEndOfAssociationClass\": false, \"associationClassPropertyName\": null, \"inverseAssociationClassPropertyName\": null, \"associationClassProperty\": false, \"onePrimitivePropertyOfAssociationClass\": false, \"onePrimitive\": true, \"readOnly\": false, \"dataTypeEnum\": null, \"validations\": null, \"qualifiedName\": \"RootElement::org::multipoly::Notification::Notification::Name\", \"persistentName\": \"Name\", \"inverseName\": \"inverseOf::Name\", \"inverseQualifiedName\": \"inverseOf::RootElement::org::multipoly::Notification::Notification::Name\", \"manyPrimitive\": false, \"oneEnumeration\": false, \"manyEnumeration\": false, \"controllingSide\": true, \"composite\": false, \"inverseComposite\": false, \"oneToOne\": false, \"oneToMany\": false, \"manyToOne\": true, \"manyToMany\": false, \"upper\": 1, \"lower\": 1, \"inverseUpper\": 1, \"label\": \"Name\", \"qualified\": false, \"inverseQualified\": false, \"ordered\": false, \"inverseOrdered\": false, \"unique\": true, \"inverseUnique\": false, \"derived\": false, \"navigable\": true, \"tumlUri\": \"/RootElement/notifications/{notificationId}/Name\", \"tumlOverloadedPostUri\": \"/RootElement/overloadedpost/notifications/{notificationId}/Name\", \"tumlMetaDataUri\": \"/RootElement/stringMetaData\", \"fieldType\": \"" + FieldType.String + "\"}",/* isChangeListenerAttribute */ false,/* tumlUri */ "/RootElement/notifications/{notificationId}/Name",/* tumlOverloadedPostUri */ "/RootElement/overloadedpost/notifications/{notificationId}/Name",/* tumlMetaDataUri */ "/RootElement/stringMetaData",/* fieldType */ FieldType.String),
+		Message(/* qualifiedName */ "RootElement::org::multipoly::Notification::Notification::Message",/* persistentName */ "Message",/* inverseName */ "inverseOf::Message",/* inverseQualifiedName */ "inverseOf::RootElement::org::multipoly::Notification::Notification::Message",/* isAssociationClassOne */ false,/* isMemberEndOfAssociationClass */ false,/* associationClassPropertyNameField */ "null",/* inverseAssociationClassPropertyNameField */ "null",/* isAssociationClassProperty */ false,/* isOnePrimitivePropertyOfAssociationClass */ false,/* isOnePrimitive */ true,/* isReadOnly */ false,/* dataTypeEnum */ null,/* validations */ Collections.<UmlgValidation>emptyList(),/* isManyPrimitive */ false,/* oneEnumeration */ false,/* manyEnumeration */ false,/* isControllingSide */ true,/* isComposite */ false,/* isInverseComposite */ false,/* label */ UmlgLabelConverterFactory.getUmlgLabelConverter().convert("Message"),/* isOneToOne */ false,/* isOneToMany */ false,/* isManyToOne */ true,/* isManyToMany */ false,/* upper */ 1,/* lower */ 1,/* inverseUpper */ 1,/* isQualified */ false,/* isInverseQualified */ false,/* isOrdered */ false,/* isInverseOrdered */ false,/* isUnique */ true,/* isInverseUnique */ false,/* isDerived */ false,/* isNavigable */ true,/* propertyType */ String.class,/* json */ "{\"name\": \"Message\", \"associationClassOne\": false, \"memberEndOfAssociationClass\": false, \"associationClassPropertyName\": null, \"inverseAssociationClassPropertyName\": null, \"associationClassProperty\": false, \"onePrimitivePropertyOfAssociationClass\": false, \"onePrimitive\": true, \"readOnly\": false, \"dataTypeEnum\": null, \"validations\": null, \"qualifiedName\": \"RootElement::org::multipoly::Notification::Notification::Message\", \"persistentName\": \"Message\", \"inverseName\": \"inverseOf::Message\", \"inverseQualifiedName\": \"inverseOf::RootElement::org::multipoly::Notification::Notification::Message\", \"manyPrimitive\": false, \"oneEnumeration\": false, \"manyEnumeration\": false, \"controllingSide\": true, \"composite\": false, \"inverseComposite\": false, \"oneToOne\": false, \"oneToMany\": false, \"manyToOne\": true, \"manyToMany\": false, \"upper\": 1, \"lower\": 1, \"inverseUpper\": 1, \"label\": \"Message\", \"qualified\": false, \"inverseQualified\": false, \"ordered\": false, \"inverseOrdered\": false, \"unique\": true, \"inverseUnique\": false, \"derived\": false, \"navigable\": true, \"tumlUri\": \"/RootElement/notifications/{notificationId}/Message\", \"tumlOverloadedPostUri\": \"/RootElement/overloadedpost/notifications/{notificationId}/Message\", \"tumlMetaDataUri\": \"/RootElement/stringMetaData\", \"fieldType\": \"" + FieldType.String + "\"}",/* isChangeListenerAttribute */ false,/* tumlUri */ "/RootElement/notifications/{notificationId}/Message",/* tumlOverloadedPostUri */ "/RootElement/overloadedpost/notifications/{notificationId}/Message",/* tumlMetaDataUri */ "/RootElement/stringMetaData",/* fieldType */ FieldType.String),
+		Content(/* qualifiedName */ "RootElement::org::multipoly::Notification::Notification::Content",/* persistentName */ "Content",/* inverseName */ "inverseOf::Content",/* inverseQualifiedName */ "inverseOf::RootElement::org::multipoly::Notification::Notification::Content",/* isAssociationClassOne */ false,/* isMemberEndOfAssociationClass */ false,/* associationClassPropertyNameField */ "null",/* inverseAssociationClassPropertyNameField */ "null",/* isAssociationClassProperty */ false,/* isOnePrimitivePropertyOfAssociationClass */ false,/* isOnePrimitive */ true,/* isReadOnly */ false,/* dataTypeEnum */ null,/* validations */ Collections.<UmlgValidation>emptyList(),/* isManyPrimitive */ false,/* oneEnumeration */ false,/* manyEnumeration */ false,/* isControllingSide */ true,/* isComposite */ false,/* isInverseComposite */ false,/* label */ UmlgLabelConverterFactory.getUmlgLabelConverter().convert("Content"),/* isOneToOne */ false,/* isOneToMany */ false,/* isManyToOne */ true,/* isManyToMany */ false,/* upper */ 1,/* lower */ 1,/* inverseUpper */ 1,/* isQualified */ false,/* isInverseQualified */ false,/* isOrdered */ false,/* isInverseOrdered */ false,/* isUnique */ true,/* isInverseUnique */ false,/* isDerived */ false,/* isNavigable */ true,/* propertyType */ String.class,/* json */ "{\"name\": \"Content\", \"associationClassOne\": false, \"memberEndOfAssociationClass\": false, \"associationClassPropertyName\": null, \"inverseAssociationClassPropertyName\": null, \"associationClassProperty\": false, \"onePrimitivePropertyOfAssociationClass\": false, \"onePrimitive\": true, \"readOnly\": false, \"dataTypeEnum\": null, \"validations\": null, \"qualifiedName\": \"RootElement::org::multipoly::Notification::Notification::Content\", \"persistentName\": \"Content\", \"inverseName\": \"inverseOf::Content\", \"inverseQualifiedName\": \"inverseOf::RootElement::org::multipoly::Notification::Notification::Content\", \"manyPrimitive\": false, \"oneEnumeration\": false, \"manyEnumeration\": false, \"controllingSide\": true, \"composite\": false, \"inverseComposite\": false, \"oneToOne\": false, \"oneToMany\": false, \"manyToOne\": true, \"manyToMany\": false, \"upper\": 1, \"lower\": 1, \"inverseUpper\": 1, \"label\": \"Content\", \"qualified\": false, \"inverseQualified\": false, \"ordered\": false, \"inverseOrdered\": false, \"unique\": true, \"inverseUnique\": false, \"derived\": false, \"navigable\": true, \"tumlUri\": \"/RootElement/notifications/{notificationId}/Content\", \"tumlOverloadedPostUri\": \"/RootElement/overloadedpost/notifications/{notificationId}/Content\", \"tumlMetaDataUri\": \"/RootElement/stringMetaData\", \"fieldType\": \"" + FieldType.String + "\"}",/* isChangeListenerAttribute */ false,/* tumlUri */ "/RootElement/notifications/{notificationId}/Content",/* tumlOverloadedPostUri */ "/RootElement/overloadedpost/notifications/{notificationId}/Content",/* tumlMetaDataUri */ "/RootElement/stringMetaData",/* fieldType */ FieldType.String),
 		RootElement(/* qualifiedName */ "RootElement",/* persistentName */ "RootElement",/* inverseName */ "inverseOfRootElement",/* inverseQualifiedName */ "inverseOfRootElement",/* isAssociationClassOne */ false,/* isMemberEndOfAssociationClass */ false,/* associationClassPropertyNameField */ "null",/* inverseAssociationClassPropertyNameField */ "null",/* isAssociationClassProperty */ false,/* isOnePrimitivePropertyOfAssociationClass */ false,/* isOnePrimitive */ false,/* isReadOnly */ false,/* dataTypeEnum */ null,/* validations */ Collections.<UmlgValidation>emptyList(),/* isManyPrimitive */ false,/* oneEnumeration */ false,/* manyEnumeration */ false,/* isControllingSide */ true,/* isComposite */ false,/* isInverseComposite */ true,/* label */ UmlgLabelConverterFactory.getUmlgLabelConverter().convert("rootNotification"),/* isOneToOne */ true,/* isOneToMany */ false,/* isManyToOne */ false,/* isManyToMany */ false,/* upper */ -1,/* lower */ 0,/* inverseUpper */ 1,/* isQualified */ false,/* isInverseQualified */ false,/* isOrdered */ false,/* isInverseOrdered */ false,/* isUnique */ false,/* isInverseUnique */ false,/* isDerived */ false,/* isNavigable */ false,/* propertyType */ Object.class,/* json */ "{\"name\": \"RootElement\", \"associationClassOne\": false, \"memberEndOfAssociationClass\": false, \"associationClassPropertyName\": null, \"inverseAssociationClassPropertyName\": null, \"associationClassProperty\": false, \"onePrimitivePropertyOfAssociationClass\": false, \"onePrimitive\": false, \"readOnly\": false, \"dataTypeEnum\": null, \"validations\": null, \"qualifiedName\": \"RootElement\", \"persistentName\": \"RootElement\", \"inverseName\": \"inverseOfRootElement\", \"inverseQualifiedName\": \"inverseOfRootElement\", \"manyPrimitive\": false, \"oneEnumeration\": false, \"manyEnumeration\": false, \"controllingSide\": true, \"composite\": false, \"inverseComposite\": true, \"oneToOne\": true, \"oneToMany\": false, \"manyToOne\": false, \"manyToMany\": false, \"upper\": -1, \"lower\": 0, \"inverseUpper\": 1, \"label\": \"rootNotification\", \"qualified\": false, \"inverseQualified\": false, \"ordered\": false, \"inverseOrdered\": false, \"unique\": false, \"inverseUnique\": false, \"derived\": false, \"navigable\": false, \"tumlUri\": \"/RootElement\", \"tumlOverloadedPostUri\": \"/RootElement\", \"tumlMetaDataUri\": \"\", \"fieldType\": \"" + FieldType.String + "\"}",/* isChangeListenerAttribute */ false,/* tumlUri */ "/RootElement",/* tumlOverloadedPostUri */ "/RootElement",/* tumlMetaDataUri */ "",/* fieldType */ FieldType.String),
 		id(/* qualifiedName */ "not_applicable",/* persistentName */ "not_applicable",/* inverseName */ "inverseOf::not_applicable",/* inverseQualifiedName */ "inverseOf::not_applicable",/* isAssociationClassOne */ false,/* isMemberEndOfAssociationClass */ false,/* associationClassPropertyNameField */ "null",/* inverseAssociationClassPropertyNameField */ "null",/* isAssociationClassProperty */ false,/* isOnePrimitivePropertyOfAssociationClass */ false,/* isOnePrimitive */ true,/* isReadOnly */ true,/* dataTypeEnum */ null,/* validations */ Collections.<UmlgValidation>emptyList(),/* isManyPrimitive */ false,/* oneEnumeration */ false,/* manyEnumeration */ false,/* isControllingSide */ false,/* isComposite */ false,/* isInverseComposite */ false,/* label */ UmlgLabelConverterFactory.getUmlgLabelConverter().convert(""),/* isOneToOne */ true,/* isOneToMany */ false,/* isManyToOne */ true,/* isManyToMany */ false,/* upper */ 1,/* lower */ 1,/* inverseUpper */ 1,/* isQualified */ false,/* isInverseQualified */ false,/* isOrdered */ false,/* isInverseOrdered */ false,/* isUnique */ false,/* isInverseUnique */ true,/* isDerived */ false,/* isNavigable */ true,/* propertyType */ Object.class,/* json */ "{\"name\": \"id\", \"associationClassOne\": false, \"memberEndOfAssociationClass\": false, \"associationClassPropertyName\": null, \"inverseAssociationClassPropertyName\": null, \"associationClassProperty\": false, \"onePrimitivePropertyOfAssociationClass\": false, \"onePrimitive\": true, \"readOnly\": true, \"dataTypeEnum\": null, \"validations\": null, \"qualifiedName\": \"not_applicable\", \"persistentName\": \"not_applicable\", \"inverseName\": \"inverseOf::not_applicable\", \"inverseQualifiedName\": \"inverseOf::not_applicable\", \"manyPrimitive\": false, \"oneEnumeration\": false, \"manyEnumeration\": false, \"controllingSide\": false, \"composite\": false, \"inverseComposite\": false, \"oneToOne\": true, \"oneToMany\": false, \"manyToOne\": true, \"manyToMany\": false, \"upper\": 1, \"lower\": 1, \"inverseUpper\": 1, \"label\": \"\", \"qualified\": false, \"inverseQualified\": false, \"ordered\": false, \"inverseOrdered\": false, \"unique\": false, \"inverseUnique\": true, \"derived\": false, \"navigable\": true, \"tumlUri\": \"\", \"tumlOverloadedPostUri\": \"\", \"tumlMetaDataUri\": \"\", \"fieldType\": \"" + FieldType.Integer + "\"}",/* isChangeListenerAttribute */ false,/* tumlUri */ "",/* tumlOverloadedPostUri */ "",/* tumlMetaDataUri */ "",/* fieldType */ FieldType.Integer);
 		private String _qualifiedName;
@@ -774,14 +774,14 @@ public class Notification extends BaseUmlgCompositionNode implements UmlgRestlet
 			if ( RootElement.getInverseQualifiedName().equals(inverseQualifiedName) ) {
 				return RootElement;
 			}
-			if ( Name.getInverseQualifiedName().equals(inverseQualifiedName) ) {
-				return Name;
+			if ( Content.getInverseQualifiedName().equals(inverseQualifiedName) ) {
+				return Content;
 			}
 			if ( Message.getInverseQualifiedName().equals(inverseQualifiedName) ) {
 				return Message;
 			}
-			if ( Content.getInverseQualifiedName().equals(inverseQualifiedName) ) {
-				return Content;
+			if ( Name.getInverseQualifiedName().equals(inverseQualifiedName) ) {
+				return Name;
 			}
 			return null;
 		}
@@ -793,14 +793,14 @@ public class Notification extends BaseUmlgCompositionNode implements UmlgRestlet
 			if ( RootElement.getLabel().equals(_label) ) {
 				return RootElement;
 			}
-			if ( Name.getLabel().equals(_label) ) {
-				return Name;
+			if ( Content.getLabel().equals(_label) ) {
+				return Content;
 			}
 			if ( Message.getLabel().equals(_label) ) {
 				return Message;
 			}
-			if ( Content.getLabel().equals(_label) ) {
-				return Content;
+			if ( Name.getLabel().equals(_label) ) {
+				return Name;
 			}
 			return null;
 		}
@@ -812,14 +812,14 @@ public class Notification extends BaseUmlgCompositionNode implements UmlgRestlet
 			if ( RootElement.getQualifiedName().equals(qualifiedName) ) {
 				return RootElement;
 			}
-			if ( Name.getQualifiedName().equals(qualifiedName) ) {
-				return Name;
+			if ( Content.getQualifiedName().equals(qualifiedName) ) {
+				return Content;
 			}
 			if ( Message.getQualifiedName().equals(qualifiedName) ) {
 				return Message;
 			}
-			if ( Content.getQualifiedName().equals(qualifiedName) ) {
-				return Content;
+			if ( Name.getQualifiedName().equals(qualifiedName) ) {
+				return Name;
 			}
 			return null;
 		}

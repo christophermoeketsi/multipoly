@@ -1,6 +1,5 @@
 package org.multipoly;
 
-import org.multipoly.Board.Edward;
 import org.umlg.runtime.adaptor.UMLG;
 
 import java.util.List;
@@ -53,9 +52,6 @@ public class MExecutorService<T> {
     }
 
     public void shutdown() {
-        Edward edward  = new Edward();
-        edward.getBoard()
-                e
         if (this.executorService != null)
             this.executorService.shutdown();
         if (this.scheduledExecutorService != null)

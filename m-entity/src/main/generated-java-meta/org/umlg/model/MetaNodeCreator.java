@@ -1,11 +1,11 @@
 package org.umlg.model;
 
+import org.multipoly.Board.meta.AssetMeta;
 import org.multipoly.Board.meta.BlockMeta;
 import org.multipoly.Board.meta.BoardMeta;
-import org.multipoly.Board.meta.EdwardMeta;
 import org.multipoly.Notification.meta.NotificationMeta;
-import org.multipoly.meta.UserGroupMeta;
-import org.multipoly.meta.UserMeta;
+import org.multipoly.User.meta.UserGroupMeta;
+import org.multipoly.User.meta.UserMeta;
 import org.umlg.runtime.adaptor.UmlgMetaNodeManager;
 
 /** This class is responsible to create the meta singleton upfront.
@@ -20,12 +20,12 @@ public class MetaNodeCreator implements UmlgMetaNodeManager {
 	}
 	
 	public void createAllMetaNodes() {
+		UserGroupMeta.getInstance();
+		UserMeta.getInstance();
 		NotificationMeta.getInstance();
 		BoardMeta.getInstance();
 		BlockMeta.getInstance();
-		EdwardMeta.getInstance();
-		UserGroupMeta.getInstance();
-		UserMeta.getInstance();
+		AssetMeta.getInstance();
 	}
 
 

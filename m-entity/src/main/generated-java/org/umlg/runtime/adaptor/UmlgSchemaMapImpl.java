@@ -3,12 +3,12 @@ package org.umlg.runtime.adaptor;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.multipoly.Board.Asset;
 import org.multipoly.Board.Block;
 import org.multipoly.Board.Board;
-import org.multipoly.Board.Edward;
 import org.multipoly.Notification.Notification;
-import org.multipoly.User;
-import org.multipoly.UserGroup;
+import org.multipoly.User.User;
+import org.multipoly.User.UserGroup;
 import org.umlg.runtime.domain.UmlgNode;
 
 public class UmlgSchemaMapImpl implements UmlgSchemaMap {
@@ -31,12 +31,12 @@ public class UmlgSchemaMapImpl implements UmlgSchemaMap {
 	}
 	
 	private void addAllEntries() {
+		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::UserGroup", UserGroup.class);
+		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::User", User.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Notification::Notification", Notification.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Board::Board", Board.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Board::Block", Block.class);
-		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Board::Edward", Edward.class);
-		this.qualifiedNameClassMap.put("RootElement::org::multipoly::UserGroup", UserGroup.class);
-		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User", User.class);
+		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Board::Asset", Asset.class);
 	}
 
 

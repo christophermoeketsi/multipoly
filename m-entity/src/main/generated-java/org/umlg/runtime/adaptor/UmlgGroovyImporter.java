@@ -8,6 +8,12 @@ public class UmlgGroovyImporter {
 	static public Set<String> importStatic = new HashSet<String>();
 
 	static {
+		imports.add("org.multipoly.User.*");
+		importStatic.add("org.multipoly.User.UserGroup.UserGroupRuntimePropertyEnum");
+		imports.add("org.umlg.runtime.adaptor.*");
+		imports.add("org.multipoly.User.*");
+		importStatic.add("org.multipoly.User.User.UserRuntimePropertyEnum");
+		imports.add("org.umlg.runtime.adaptor.*");
 		imports.add("org.multipoly.Notification.*");
 		importStatic.add("org.multipoly.Notification.Notification.NotificationRuntimePropertyEnum");
 		imports.add("org.umlg.runtime.adaptor.*");
@@ -18,13 +24,7 @@ public class UmlgGroovyImporter {
 		importStatic.add("org.multipoly.Board.Block.BlockRuntimePropertyEnum");
 		imports.add("org.umlg.runtime.adaptor.*");
 		imports.add("org.multipoly.Board.*");
-		importStatic.add("org.multipoly.Board.Edward.EdwardRuntimePropertyEnum");
-		imports.add("org.umlg.runtime.adaptor.*");
-		imports.add("org.multipoly.*");
-		importStatic.add("org.multipoly.UserGroup.UserGroupRuntimePropertyEnum");
-		imports.add("org.umlg.runtime.adaptor.*");
-		imports.add("org.multipoly.*");
-		importStatic.add("org.multipoly.User.UserRuntimePropertyEnum");
+		importStatic.add("org.multipoly.Board.Asset.AssetRuntimePropertyEnum");
 		imports.add("org.umlg.runtime.adaptor.*");
 	}
 

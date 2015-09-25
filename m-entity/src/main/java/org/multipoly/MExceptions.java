@@ -6,14 +6,14 @@ package org.multipoly;
  */
 public class MExceptions {
 
-    public static class NoDataFound extends CmException {
+    public static class NoDataFound extends MException {
         public NoDataFound(String message) {
             super(message);
         }
     }
 
-    public static abstract class CmException extends RuntimeException {
-        public CmException(String message) {
+    public static abstract class MException extends RuntimeException {
+        public MException(String message) {
             super(message);
         }
     }

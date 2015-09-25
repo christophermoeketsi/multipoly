@@ -1,6 +1,6 @@
 package org.multipoly.restlet.app;
 
-import com.rorotika.cm.admin.CmUserThreadVar;
+import org.multipoly.admin.MUserThreadVar;
 import org.restlet.Context;
 import org.restlet.Request;
 import org.restlet.Response;
@@ -24,7 +24,7 @@ public class MRestletFilter extends Filter {
 
     @Override
     protected void afterHandle(Request request, Response response) {
-        CmUserThreadVar.INSTANCE.remove();
+        MUserThreadVar.INSTANCE.remove();
         UMLG.get().rollback();
     }
 }

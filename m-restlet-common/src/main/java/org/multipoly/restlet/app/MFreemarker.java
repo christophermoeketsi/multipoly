@@ -20,12 +20,12 @@ public class MFreemarker {
         this.logger = LoggerFactory.getLogger(MFreemarker.class);;
         this.configuration = new Configuration();
         try {
-            File file = new File("./../cm-web/src/main/resources/");
+            File file = new File("./../m-web/src/main/resources/");
             if (file.exists()) {
                 this.configuration.setDirectoryForTemplateLoading(file);
                 logger.info(String.format("loading freemarker resources from %s", new String[]{file.getAbsolutePath()}));
             } else {
-                file = new File("./cm-web/src/main/resources/");
+                file = new File("./m-web/src/main/resources/");
                 if (file.exists()) {
                     this.configuration.setDirectoryForTemplateLoading(file);
                     logger.info(String.format("loading freemarker resources from %s", new String[]{file.getAbsolutePath()}));

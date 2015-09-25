@@ -1,5 +1,6 @@
 package org.multipoly.security;
 
+import org.multipoly.User.ROLE;
 import org.multipoly.User.User;
 import org.multipoly.User.UserGroup;
 import org.multipoly.admin.MUserThreadVar;
@@ -143,7 +144,7 @@ public class MMemoryRealm extends Realm {
         for (ROLE role : ROLE.values()) {
             unmap(user, getRole(role.name()));
         }
-        map(user, getRole(user.getRole().getQualifiedName()));
+        map(user, getRole(user.getUsertype().getQualifiedName()));
     }
 
     public void removeUser(User user) {
@@ -189,7 +190,7 @@ public class MMemoryRealm extends Realm {
             user.getSurname();
             user.getEmail();
             getUsers().add(user);
-            map(user, getRole(user.getRole().name()));
+            map(user, getRole(user.getUsertype().name()));
         }
     }
 

@@ -7,7 +7,6 @@
 /home/chris/workspace/git/multipoly/m-entity/src/main/generated-java-meta/org/multipoly/Board/meta/AssetMeta.java
 /home/chris/workspace/git/multipoly/m-entity/src/main/generated-java/org/multipoly/User/User.java
 /home/chris/workspace/git/multipoly/m-entity/src/main/generated-java/org/multipoly/User/UserGroup.java
-/home/chris/workspace/git/multipoly/m-entity/src/main/generated-java/org/multipoly/User/UserType.java
 /home/chris/workspace/git/multipoly/m-entity/src/main/generated-java/org/umlg/model/RootElement.java
 /home/chris/workspace/git/multipoly/m-entity/src/main/generated-java/org/multipoly/Board/Block.java
 /home/chris/workspace/git/multipoly/m-entity/src/main/generated-java/org/multipoly/Board/AssetType.java
@@ -17,6 +16,7 @@
 /home/chris/workspace/git/multipoly/m-entity/src/main/generated-java-meta/org/multipoly/User/meta/UserGroupMeta.java
 /home/chris/workspace/git/multipoly/m-entity/src/main/java/org/multipoly/admin/MUserThreadVar.java
 /home/chris/workspace/git/multipoly/m-entity/src/main/generated-java/org/umlg/runtime/adaptor/UmlgGroovyImporter.java
+/home/chris/workspace/git/multipoly/m-entity/src/main/generated-java/org/multipoly/User/ROLE.java
 /home/chris/workspace/git/multipoly/m-entity/src/main/generated-java/org/umlg/runtime/adaptor/UmlgSchemaMapImpl.java
 /home/chris/workspace/git/multipoly/m-entity/src/main/generated-java-meta/org/multipoly/Board/meta/BlockMeta.java
 /home/chris/workspace/git/multipoly/m-entity/src/main/generated-java-meta/org/multipoly/Board/meta/BoardMeta.java

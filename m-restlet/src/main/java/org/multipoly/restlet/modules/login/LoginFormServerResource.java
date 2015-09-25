@@ -1,11 +1,12 @@
 package org.multipoly.restlet.modules.login;
 
 import org.apache.commons.lang.StringUtils;
+import org.multipoly.restlet.app.BaseServerResource;
+import org.multipoly.restlet.app.MFreemarker;
 import org.restlet.data.MediaType;
 import org.restlet.ext.freemarker.TemplateRepresentation;
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
-import org.restlet.resource.ClientResource;
 import org.restlet.resource.ResourceException;
 
 import java.util.HashMap;
@@ -28,11 +29,11 @@ public class LoginFormServerResource extends BaseServerResource {
         Map<String, Object> dataModel = new HashMap<>();
         String redirectUri = getQueryValue("redirectUri");
         if (StringUtils.isEmpty(redirectUri)) {
-            redirectUri = "/netcm";
+            redirectUri = "/m";
         }
         dataModel.put("redirectUri", redirectUri);
-        new CMFreemarker();
-        return new TemplateRepresentation("modules/login/login.ftl", CMFreemarker.getConfiguration(), dataModel, MediaType.TEXT_HTML);
+        new MFreemarker();
+        return new TemplateRepresentation("modules/login/login.ftl", MFreemarker.getConfiguration(), dataModel, MediaType.TEXT_HTML);
     }
 
     @Override

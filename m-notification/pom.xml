@@ -14,13 +14,7 @@
 
     <build>
         <plugins>
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <argLine>-Xms2048m -Xmx8192m</argLine>
-                    <groups>com.rorotika.cm.test.FastTestCategory</groups>
-                </configuration>
-            </plugin>
+
         </plugins>
     </build>
 
@@ -28,7 +22,7 @@
         <!-- local-->
         <dependency>
             <groupId>org.multipoly</groupId>
-            <artifactId>m2-common</artifactId>
+            <artifactId>m-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

@@ -4,11 +4,9 @@ import org.apache.commons.lang.StringUtils;
 import org.restlet.Request;
 import org.restlet.Response;
 import org.restlet.ext.json.JsonRepresentation;
-import org.restlet.security.Role;
 import org.restlet.security.RoleAuthorizer;
 
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 class MRoleAuthorizer extends RoleAuthorizer {
     @Override

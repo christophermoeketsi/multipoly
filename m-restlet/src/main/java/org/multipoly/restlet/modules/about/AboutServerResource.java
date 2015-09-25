@@ -2,6 +2,8 @@ package org.multipoly.restlet.modules.about;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import org.multipoly.commonutilties.MProperties;
+import org.multipoly.restlet.app.BaseServerResource;
 import org.multipoly.restlet.app.Resource;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -38,9 +40,9 @@ public class AboutServerResource extends BaseServerResource {
             database = "Not Available";
             logger.warn("Warning: " + e.getMessage());
         }
-        result.put("version", CMProperties.INSTANCE.getAboutVersion());
+        result.put("version", MProperties.INSTANCE.getAboutVersion());
         result.put("database", database);
-        result.put("support",CMProperties.INSTANCE.getAboutSupport());
+        result.put("support",MProperties.INSTANCE.getAboutSupport());
         return new JsonRepresentation(result.toString());
     }
 

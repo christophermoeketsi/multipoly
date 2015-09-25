@@ -24,7 +24,7 @@ public abstract class BaseServerResource extends ServerResource {
         String cmPrefix = extractCmPrefix();
         Map<String, Object> dataModel = new HashMap<String, Object>();
         dataModel.put("username", getClientInfo().getUser());
-        dataModel.put("cmPrefix", cmPrefix);
+        dataModel.put("mPrefix", cmPrefix);
         List<String> roles = new ArrayList<String>(getClientInfo().getRoles().size());
         for (Role role : getClientInfo().getRoles()) {
             roles.add(role.getName());
@@ -35,9 +35,9 @@ public abstract class BaseServerResource extends ServerResource {
 
     protected String extractCmPrefix() {
         String url = getReference().getBaseRef().getRemainingPart();
-        int indexStart = url.indexOf("/cm/");
-        int indexEnd = url.indexOf("/", indexStart + "/cm/".length() + 1);
-        return url.substring(indexStart + "/cm/".length(), indexEnd);
+        int indexStart = url.indexOf("/m/");
+        int indexEnd = url.indexOf("/", indexStart + "/m/".length() + 1);
+        return url.substring(indexStart + "/m/".length(), indexEnd);
     }
 
     @Override

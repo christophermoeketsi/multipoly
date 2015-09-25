@@ -36,10 +36,17 @@
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_3R28gGOCEeWGrNM-T_NcxQ" name="usergroup" type="_Wt5iEGOCEeWGrNM-T_NcxQ" association="_3R1uYGOCEeWGrNM-T_NcxQ"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_35oHIGOCEeWGrNM-T_NcxQ" name="usertype" type="_yYahUGOCEeWGrNM-T_NcxQ" association="_35ngEGOCEeWGrNM-T_NcxQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5nJmomOHEeWGrNM-T_NcxQ" name="board" type="_cAU8wGIIEeWdJKWWnLfREg" association="_5nIYgGOHEeWGrNM-T_NcxQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_AXDXsGOJEeWGrNM-T_NcxQ" name="Surname">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_ClOfcGOJEeWGrNM-T_NcxQ" name="Email">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
         </packagedElement>
-        <packagedElement xmi:type="uml:Enumeration" xmi:id="_yYahUGOCEeWGrNM-T_NcxQ" name="UserType">
+        <packagedElement xmi:type="uml:Enumeration" xmi:id="_yYahUGOCEeWGrNM-T_NcxQ" name="ROLE">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_35oHIWOCEeWGrNM-T_NcxQ" name="user" type="_cntOEGOCEeWGrNM-T_NcxQ" association="_35ngEGOCEeWGrNM-T_NcxQ">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FzuDcGODEeWGrNM-T_NcxQ" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FzuDcGODEeWGrNM-T_NcxQ"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Fzv4oGODEeWGrNM-T_NcxQ" value="*"/>
           </ownedAttribute>
           <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_z5pqkGOCEeWGrNM-T_NcxQ" name="PALYER"/>
@@ -50,7 +57,7 @@
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3R2VcWOCEeWGrNM-T_NcxQ" key="nature" value="UML_Nature"/>
           </eAnnotations>
         </packagedElement>
-        <packagedElement xmi:type="uml:Association" xmi:id="_35ngEGOCEeWGrNM-T_NcxQ" name="user_usertype" memberEnd="_35oHIGOCEeWGrNM-T_NcxQ _35oHIWOCEeWGrNM-T_NcxQ">
+        <packagedElement xmi:type="uml:Association" xmi:id="_35ngEGOCEeWGrNM-T_NcxQ" name="user_role" memberEnd="_35oHIGOCEeWGrNM-T_NcxQ _35oHIWOCEeWGrNM-T_NcxQ">
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_35ngEWOCEeWGrNM-T_NcxQ" source="org.eclipse.papyrus">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_35ngEmOCEeWGrNM-T_NcxQ" key="nature" value="UML_Nature"/>
           </eAnnotations>
@@ -67,11 +74,21 @@
           <ownedAttribute xmi:type="uml:Property" xmi:id="_6TkCkGKIEeWHlPTDn8LUxA" name="Message">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_CNKsIWOGEeWGrNM-T_NcxQ" name="notificationtype" type="_XhHb8GIHEeWdJKWWnLfREg" association="_CNKFEGOGEeWGrNM-T_NcxQ"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Enumeration" xmi:id="_XhHb8GIHEeWdJKWWnLfREg" name="NOTIFICATIONTYPE">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_CNKsImOGEeWGrNM-T_NcxQ" name="notification" type="_LbEQIGIHEeWdJKWWnLfREg" association="_CNKFEGOGEeWGrNM-T_NcxQ">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uMLYIGOHEeWGrNM-T_NcxQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uMQQoGOHEeWGrNM-T_NcxQ" value="*"/>
+          </ownedAttribute>
           <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_aMrDQGIHEeWdJKWWnLfREg" name="PERSONAL"/>
           <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_dxCh4GIHEeWdJKWWnLfREg" name="BOARD"/>
           <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_OomtsGIIEeWdJKWWnLfREg" name="ALL"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_CNKFEGOGEeWGrNM-T_NcxQ" name="notification_notificationtype" memberEnd="_CNKsIWOGEeWGrNM-T_NcxQ _CNKsImOGEeWGrNM-T_NcxQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CNKFEWOGEeWGrNM-T_NcxQ" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CNKsIGOGEeWGrNM-T_NcxQ" key="nature" value="UML_Nature"/>
+          </eAnnotations>
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_XMDVcGIIEeWdJKWWnLfREg" name="Board">
@@ -83,6 +100,10 @@
           <ownedAttribute xmi:type="uml:Property" xmi:id="_ip1lEGOBEeWGrNM-T_NcxQ" name="asset" type="_4eAjYGN-EeWGrNM-T_NcxQ" association="_ipzv4GOBEeWGrNM-T_NcxQ">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xhMa4GOBEeWGrNM-T_NcxQ"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xhQsUGOBEeWGrNM-T_NcxQ" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5nLb0GOHEeWGrNM-T_NcxQ" name="user" type="_cntOEGOCEeWGrNM-T_NcxQ" association="_5nIYgGOHEeWGrNM-T_NcxQ">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-ELLkGOHEeWGrNM-T_NcxQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-ENn0GOHEeWGrNM-T_NcxQ" value="*"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_NgL3oGIJEeWdJKWWnLfREg" name="Block">
@@ -150,6 +171,11 @@
         <packagedElement xmi:type="uml:Association" xmi:id="_ipzv4GOBEeWGrNM-T_NcxQ" name="board_asset" memberEnd="_ip0-AWOBEeWGrNM-T_NcxQ _ip1lEGOBEeWGrNM-T_NcxQ">
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ip0W8GOBEeWGrNM-T_NcxQ" source="org.eclipse.papyrus">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ip0-AGOBEeWGrNM-T_NcxQ" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_5nIYgGOHEeWGrNM-T_NcxQ" name="user_board" memberEnd="_5nJmomOHEeWGrNM-T_NcxQ _5nLb0GOHEeWGrNM-T_NcxQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5nJmoGOHEeWGrNM-T_NcxQ" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5nJmoWOHEeWGrNM-T_NcxQ" key="nature" value="UML_Nature"/>
           </eAnnotations>
         </packagedElement>
       </packagedElement>

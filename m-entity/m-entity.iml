@@ -13,27 +13,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.umlg:runtime-jetty:1.1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.umlg:runtime-servlet:1.1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.restlet.jee:org.restlet.ext.servlet:2.2.2" level="project" />
-    <orderEntry type="library" name="Maven: org.restlet.jee:org.restlet:2.2.2" level="project" />
-    <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.umlg:runtime-jetty-websocket:1.1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-server:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-http:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-util:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-io:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-servlet:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-webapp:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-xml:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-security:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:websocket-api:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:websocket-server:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:websocket-common:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:websocket-client:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:websocket-servlet:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-rewrite:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-client:9.1.3.v20140225" level="project" />
     <orderEntry type="library" name="Maven: org.umlg:runtime-uml:1.1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.umlg:ocl:1.1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.umlg:uml:1.1.0-SNAPSHOT" level="project" />

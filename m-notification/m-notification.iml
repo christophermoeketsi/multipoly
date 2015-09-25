@@ -11,7 +11,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.multipoly:m2-common:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="m-common" />
     <orderEntry type="library" name="Maven: org.freemarker:freemarker:2.3.20" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.3.0" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.3.0" level="project" />
@@ -31,27 +31,6 @@
     <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-csv:1.0" level="project" />
     <orderEntry type="module" module-name="m-entity" />
-    <orderEntry type="library" name="Maven: org.umlg:runtime-jetty:1.1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.umlg:runtime-servlet:1.1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.restlet.jee:org.restlet.ext.servlet:2.2.2" level="project" />
-    <orderEntry type="library" name="Maven: org.restlet.jee:org.restlet:2.2.2" level="project" />
-    <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.umlg:runtime-jetty-websocket:1.1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-server:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-http:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-util:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-io:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-servlet:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-webapp:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-xml:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-security:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:websocket-api:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:websocket-server:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:websocket-common:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:websocket-client:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:websocket-servlet:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-rewrite:9.1.3.v20140225" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-client:9.1.3.v20140225" level="project" />
     <orderEntry type="library" name="Maven: org.umlg:runtime-uml:1.1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.umlg:ocl:1.1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.umlg:uml:1.1.0-SNAPSHOT" level="project" />
@@ -125,6 +104,7 @@
     <orderEntry type="library" name="Maven: org.umlg:generation:1.1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.umlg:java-generation-util:1.1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.umlg:restlet:1.1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.umlg:sqlg-postgres:1.0.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.umlg:sqlg-postgres:1.1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.postgresql:postgresql:9.4-1201-jdbc41" level="project" />
   </component>
 </module>

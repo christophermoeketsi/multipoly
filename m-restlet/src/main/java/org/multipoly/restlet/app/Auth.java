@@ -1,6 +1,7 @@
 package org.multipoly.restlet.app;
 
-import com.rorotika.cm.user.ROLE;
+
+import org.multipoly.User.ROLE;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

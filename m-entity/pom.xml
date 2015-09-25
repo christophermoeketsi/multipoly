@@ -77,11 +77,11 @@
 
     <dependencies>
         <!-- umlg -->
-        <dependency>
+       <!-- <dependency>
             <groupId>org.umlg</groupId>
             <artifactId>runtime-jetty</artifactId>
             <version>${umlg.version}</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.umlg</groupId>
             <artifactId>runtime-uml</artifactId>

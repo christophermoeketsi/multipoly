@@ -1,8 +1,10 @@
+org/multipoly/User/User$3.class
 org/multipoly/MExecutorService$MExecutorServiceThreadFactory.class
+org/multipoly/User/ROLE$ROLERuntimePropertyEnum.class
 org/multipoly/Notification/Notification.class
 org/multipoly/Board/Asset$1.class
 org/multipoly/Board/Board.class
-org/multipoly/MExceptions$CmException.class
+org/multipoly/Board/Board$4.class
 org/multipoly/Notification/meta/NotificationMeta.class
 org/multipoly/User/meta/UserGroupMeta.class
 org/umlg/model/RootElement$RootElementRuntimePropertyEnum.class
@@ -13,6 +15,7 @@ org/multipoly/Board/Board$1.class
 org/multipoly/Board/Block$2.class
 org/multipoly/Notification/Notification$NotificationRuntimePropertyEnum.class
 org/multipoly/Board/Board$3.class
+org/multipoly/User/ROLE.class
 org/multipoly/Board/Board$BoardRuntimePropertyEnum.class
 org/multipoly/Notification/Notification$1.class
 org/multipoly/Notification/NOTIFICATIONTYPE$NOTIFICATIONTYPERuntimePropertyEnum.class
@@ -23,7 +26,6 @@ org/umlg/runtime/adaptor/UmlgGroovyImporter.class
 org/multipoly/User/User$2.class
 org/multipoly/User/UserGroup$UserGroupRuntimePropertyEnum.class
 org/multipoly/Board/Asset.class
-org/multipoly/User/UserType$UserTypeRuntimePropertyEnum.class
 org/multipoly/Board/meta/BlockMeta.class
 org/umlg/model/RootElement.class
 org/multipoly/Board/Board$2.class
@@ -39,6 +41,7 @@ org/multipoly/admin/MUserThreadVar.class
 org/multipoly/Board/AssetType$AssetTypeRuntimePropertyEnum.class
 org/multipoly/MExecutorService$MThreadPoolExecutor.class
 org/multipoly/User/UserGroup$2.class
+org/multipoly/MExceptions$MException.class
 org/umlg/model/QualifiedNameClassMap.class
 org/multipoly/inicialise/MInitialise.class
 org/multipoly/Board/Asset$2.class
@@ -50,6 +53,5 @@ org/multipoly/admin/MUserThreadVar$1.class
 org/multipoly/User/meta/UserMeta.class
 org/umlg/model/MetaNodeCreator.class
 org/multipoly/Notification/NOTIFICATIONTYPE.class
-org/multipoly/User/UserType.class
 org/multipoly/Board/Block$1.class
 org/multipoly/MExceptions.class

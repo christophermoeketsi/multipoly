@@ -33,13 +33,22 @@ import org.multipoly.Board.Board_board_asset_lookUpForMany_ServerResourceImpl;
 import org.multipoly.Board.Board_board_block_LookupServerResourceImpl;
 import org.multipoly.Board.Board_board_block_ServerResourceImpl;
 import org.multipoly.Board.Board_board_block_lookUpForOne_ServerResourceImpl;
+import org.multipoly.Board.Board_board_user_lookUpForMany_ServerResourceImpl;
 import org.multipoly.Board.Boards_LookupServerResourceImpl;
 import org.multipoly.Board.Boards_ServerResourceImpl;
+import org.multipoly.Board.User_user_board_LookupServerResourceImpl;
+import org.multipoly.Board.User_user_board_ServerResourceImpl;
+import org.multipoly.Notification.NOTIFICATIONTYPE_notificationtype_notification_LookupServerResourceImpl;
+import org.multipoly.Notification.NOTIFICATIONTYPE_notificationtype_notification_ServerResourceImpl;
 import org.multipoly.Notification.NotificationCompositePathServerResourceImpl;
 import org.multipoly.Notification.NotificationLookupServerResourceImpl;
 import org.multipoly.Notification.NotificationServerResourceImpl;
 import org.multipoly.Notification.Notifications_LookupServerResourceImpl;
 import org.multipoly.Notification.Notifications_ServerResourceImpl;
+import org.multipoly.User.Board_board_user_LookupServerResourceImpl;
+import org.multipoly.User.Board_board_user_ServerResourceImpl;
+import org.multipoly.User.ROLE_usertype_user_LookupServerResourceImpl;
+import org.multipoly.User.ROLE_usertype_user_ServerResourceImpl;
 import org.multipoly.User.UserCompositePathServerResourceImpl;
 import org.multipoly.User.UserGroupCompositePathServerResourceImpl;
 import org.multipoly.User.UserGroupLookupServerResourceImpl;
@@ -51,8 +60,7 @@ import org.multipoly.User.UserGroups_LookupServerResourceImpl;
 import org.multipoly.User.UserGroups_ServerResourceImpl;
 import org.multipoly.User.UserLookupServerResourceImpl;
 import org.multipoly.User.UserServerResourceImpl;
-import org.multipoly.User.UserType_usertype_user_LookupServerResourceImpl;
-import org.multipoly.User.UserType_usertype_user_ServerResourceImpl;
+import org.multipoly.User.User_user_board_lookUpForOne_ServerResourceImpl;
 import org.multipoly.User.User_user_usergroup_LookupServerResourceImpl;
 import org.multipoly.User.User_user_usergroup_ServerResourceImpl;
 import org.multipoly.User.User_user_usergroup_lookUpForOne_ServerResourceImpl;
@@ -89,9 +97,12 @@ public enum RestletRouterEnum {
 	ASSET_forwardToLookup(/*  */ "/assets/{assetId}/forwardToLookup",/*  */ AssetLookupServerResourceImpl.class),
 	UserGroup_user(/*  */ "/usergroups/{usergroupId}/user",/*  */ UserGroup_usergroup_user_ServerResourceImpl.class),
 	User_usergroup(/*  */ "/users/{userId}/usergroup",/*  */ User_user_usergroup_ServerResourceImpl.class),
-	UserType_user(/*  */ "/usertypes/{usertypeId}/user",/*  */ UserType_usertype_user_ServerResourceImpl.class),
+	User_board(/*  */ "/users/{userId}/board",/*  */ User_user_board_ServerResourceImpl.class),
+	ROLE_user(/*  */ "/roles/{roleId}/user",/*  */ ROLE_usertype_user_ServerResourceImpl.class),
+	NOTIFICATIONTYPE_notification(/*  */ "/notificationtypes/{notificationtypeId}/notification",/*  */ NOTIFICATIONTYPE_notificationtype_notification_ServerResourceImpl.class),
 	Board_block(/*  */ "/boards/{boardId}/block",/*  */ Board_board_block_ServerResourceImpl.class),
 	Board_asset(/*  */ "/boards/{boardId}/asset",/*  */ Board_board_asset_ServerResourceImpl.class),
+	Board_user(/*  */ "/boards/{boardId}/user",/*  */ Board_board_user_ServerResourceImpl.class),
 	Block_board(/*  */ "/blocks/{blockId}/board",/*  */ Block_block_board_ServerResourceImpl.class),
 	Block_asset(/*  */ "/blocks/{blockId}/asset",/*  */ Block_block_asset_ServerResourceImpl.class),
 	Asset_block(/*  */ "/assets/{assetId}/block",/*  */ Asset_asset_block_ServerResourceImpl.class),
@@ -99,9 +110,12 @@ public enum RestletRouterEnum {
 	AssetType_asset(/*  */ "/assettypes/{assettypeId}/asset",/*  */ AssetType_assettype_asset_ServerResourceImpl.class),
 	UserGroup_user_forwardToLookup(/*  */ "/usergroups/{usergroupId}/user_forwardToLookup",/*  */ UserGroup_usergroup_user_LookupServerResourceImpl.class),
 	User_usergroup_forwardToLookup(/*  */ "/users/{userId}/usergroup_forwardToLookup",/*  */ User_user_usergroup_LookupServerResourceImpl.class),
-	UserType_user_forwardToLookup(/*  */ "/usertypes/{usertypeId}/user_forwardToLookup",/*  */ UserType_usertype_user_LookupServerResourceImpl.class),
+	User_board_forwardToLookup(/*  */ "/users/{userId}/board_forwardToLookup",/*  */ User_user_board_LookupServerResourceImpl.class),
+	ROLE_user_forwardToLookup(/*  */ "/roles/{roleId}/user_forwardToLookup",/*  */ ROLE_usertype_user_LookupServerResourceImpl.class),
+	NOTIFICATIONTYPE_notification_forwardToLookup(/*  */ "/notificationtypes/{notificationtypeId}/notification_forwardToLookup",/*  */ NOTIFICATIONTYPE_notificationtype_notification_LookupServerResourceImpl.class),
 	Board_block_forwardToLookup(/*  */ "/boards/{boardId}/block_forwardToLookup",/*  */ Board_board_block_LookupServerResourceImpl.class),
 	Board_asset_forwardToLookup(/*  */ "/boards/{boardId}/asset_forwardToLookup",/*  */ Board_board_asset_LookupServerResourceImpl.class),
+	Board_user_forwardToLookup(/*  */ "/boards/{boardId}/user_forwardToLookup",/*  */ Board_board_user_LookupServerResourceImpl.class),
 	Block_board_forwardToLookup(/*  */ "/blocks/{blockId}/board_forwardToLookup",/*  */ Block_block_board_LookupServerResourceImpl.class),
 	Block_asset_forwardToLookup(/*  */ "/blocks/{blockId}/asset_forwardToLookup",/*  */ Block_block_asset_LookupServerResourceImpl.class),
 	Asset_block_forwardToLookup(/*  */ "/assets/{assetId}/block_forwardToLookup",/*  */ Asset_asset_block_LookupServerResourceImpl.class),
@@ -121,10 +135,12 @@ public enum RestletRouterEnum {
 	ASSETS_forwardToLookup(/*  */ "/assets_forwardToLookup",/*  */ Assets_LookupServerResourceImpl.class),
 	ROOT(/*  */ "/umlgRoot",/*  */ RootServerResourceImpl.class),
 	USER_lookupFor_user_usergroup(/*  */ "/users/{userId}/lookupFor_user_usergroup",/*  */ User_user_usergroup_lookUpForOne_ServerResourceImpl.class),
+	USER_lookupFor_user_board(/*  */ "/users/{userId}/lookupFor_user_board",/*  */ User_user_board_lookUpForOne_ServerResourceImpl.class),
 	BOARD_lookupFor_board_block(/*  */ "/boards/{boardId}/lookupFor_board_block",/*  */ Board_board_block_lookUpForOne_ServerResourceImpl.class),
 	BLOCK_lookupFor_block_board(/*  */ "/blocks/{blockId}/lookupFor_block_board",/*  */ Block_block_board_lookUpForOne_ServerResourceImpl.class),
 	USERGROUP_lookupFor_usergroup_user(/*  */ "/usergroups/{usergroupId}/lookupFor_usergroup_user",/*  */ UserGroup_usergroup_user_lookUpForMany_ServerResourceImpl.class),
 	BOARD_lookupFor_board_asset(/*  */ "/boards/{boardId}/lookupFor_board_asset",/*  */ Board_board_asset_lookUpForMany_ServerResourceImpl.class),
+	BOARD_lookupFor_board_user(/*  */ "/boards/{boardId}/lookupFor_board_user",/*  */ Board_board_user_lookUpForMany_ServerResourceImpl.class),
 	BLOCK_lookupFor_block_asset(/*  */ "/blocks/{blockId}/lookupFor_block_asset",/*  */ Block_block_asset_lookUpForMany_ServerResourceImpl.class),
 	ASSET_lookupFor_asset_block(/*  */ "/assets/{assetId}/lookupFor_asset_block",/*  */ Asset_asset_block_lookUpForMany_ServerResourceImpl.class),
 	ASSET_lookupFor_asset_board(/*  */ "/assets/{assetId}/lookupFor_asset_board",/*  */ Asset_asset_board_lookUpForMany_ServerResourceImpl.class),
@@ -179,9 +195,12 @@ public enum RestletRouterEnum {
 		RestletRouterEnum.ASSET_forwardToLookup.attach(router);
 		RestletRouterEnum.UserGroup_user.attach(router);
 		RestletRouterEnum.User_usergroup.attach(router);
-		RestletRouterEnum.UserType_user.attach(router);
+		RestletRouterEnum.User_board.attach(router);
+		RestletRouterEnum.ROLE_user.attach(router);
+		RestletRouterEnum.NOTIFICATIONTYPE_notification.attach(router);
 		RestletRouterEnum.Board_block.attach(router);
 		RestletRouterEnum.Board_asset.attach(router);
+		RestletRouterEnum.Board_user.attach(router);
 		RestletRouterEnum.Block_board.attach(router);
 		RestletRouterEnum.Block_asset.attach(router);
 		RestletRouterEnum.Asset_block.attach(router);
@@ -189,9 +208,12 @@ public enum RestletRouterEnum {
 		RestletRouterEnum.AssetType_asset.attach(router);
 		RestletRouterEnum.UserGroup_user_forwardToLookup.attach(router);
 		RestletRouterEnum.User_usergroup_forwardToLookup.attach(router);
-		RestletRouterEnum.UserType_user_forwardToLookup.attach(router);
+		RestletRouterEnum.User_board_forwardToLookup.attach(router);
+		RestletRouterEnum.ROLE_user_forwardToLookup.attach(router);
+		RestletRouterEnum.NOTIFICATIONTYPE_notification_forwardToLookup.attach(router);
 		RestletRouterEnum.Board_block_forwardToLookup.attach(router);
 		RestletRouterEnum.Board_asset_forwardToLookup.attach(router);
+		RestletRouterEnum.Board_user_forwardToLookup.attach(router);
 		RestletRouterEnum.Block_board_forwardToLookup.attach(router);
 		RestletRouterEnum.Block_asset_forwardToLookup.attach(router);
 		RestletRouterEnum.Asset_block_forwardToLookup.attach(router);
@@ -211,10 +233,12 @@ public enum RestletRouterEnum {
 		RestletRouterEnum.ASSETS_forwardToLookup.attach(router);
 		RestletRouterEnum.ROOT.attach(router);
 		RestletRouterEnum.USER_lookupFor_user_usergroup.attach(router);
+		RestletRouterEnum.USER_lookupFor_user_board.attach(router);
 		RestletRouterEnum.BOARD_lookupFor_board_block.attach(router);
 		RestletRouterEnum.BLOCK_lookupFor_block_board.attach(router);
 		RestletRouterEnum.USERGROUP_lookupFor_usergroup_user.attach(router);
 		RestletRouterEnum.BOARD_lookupFor_board_asset.attach(router);
+		RestletRouterEnum.BOARD_lookupFor_board_user.attach(router);
 		RestletRouterEnum.BLOCK_lookupFor_block_asset.attach(router);
 		RestletRouterEnum.ASSET_lookupFor_asset_block.attach(router);
 		RestletRouterEnum.ASSET_lookupFor_asset_board.attach(router);

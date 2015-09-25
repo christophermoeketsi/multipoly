@@ -1,9 +1,9 @@
 package org.multipoly.restlet.app;
 
-import com.rorotika.cm.user.ROLE;
 import org.apache.commons.lang.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.multipoly.User.ROLE;
 import org.restlet.Request;
 import org.restlet.Response;
 import org.restlet.data.Status;

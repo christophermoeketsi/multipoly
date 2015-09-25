@@ -1,7 +1,7 @@
 package org.multipoly.restlet;
 
-import com.rorotika.cm.restlet.app.CMFreemarker;
-import com.rorotika.cm.restlet.app.BaseServerResource;
+import org.multipoly.restlet.app.BaseServerResource;
+import org.multipoly.restlet.app.MFreemarker;
 import org.restlet.data.MediaType;
 import org.restlet.ext.freemarker.TemplateRepresentation;
 import org.restlet.representation.Representation;
@@ -50,6 +50,6 @@ public class IndexResource extends BaseServerResource {
         dataModelWithUser.put("services", getFiles("js/services"));
         dataModelWithUser.put("controllers", getFiles("js/controllers"));
 
-        return new TemplateRepresentation("index.ftl", CMFreemarker.getConfiguration(), dataModelWithUser, MediaType.TEXT_HTML);
+        return new TemplateRepresentation("index.ftl", MFreemarker.getConfiguration(), dataModelWithUser, MediaType.TEXT_HTML);
     }
 }

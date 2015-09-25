@@ -1,8 +1,7 @@
 package org.multipoly.restlet;
 
-import com.rorotika.cm.restlet.app.CMFreemarker;
-import com.rorotika.cm.restlet.app.BaseServerResource;
 import org.multipoly.restlet.app.BaseServerResource;
+import org.multipoly.restlet.app.MFreemarker;
 import org.restlet.data.MediaType;
 import org.restlet.ext.freemarker.TemplateRepresentation;
 import org.restlet.representation.Representation;
@@ -22,6 +21,6 @@ public class DirectivesResource extends BaseServerResource {
 
     @Override
     protected Representation get()throws ResourceException {
-        return new TemplateRepresentation("directives/" + getAttribute("viewName") + ".html", CMFreemarker.getConfiguration(), getDataModelWithUser(), MediaType.TEXT_HTML);
+        return new TemplateRepresentation("directives/" + getAttribute("viewName") + ".html", MFreemarker.getConfiguration(), getDataModelWithUser(), MediaType.TEXT_HTML);
     }
 }

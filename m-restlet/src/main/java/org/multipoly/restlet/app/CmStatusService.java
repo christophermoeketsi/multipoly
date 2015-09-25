@@ -14,7 +14,7 @@ import org.restlet.service.StatusService;
  * Date: 2015/05/29
  * Time: 8:01 AM
  */
-public class MStatusService extends StatusService {
+public class CmStatusService extends StatusService {
 
     @Override
     public Status getStatus(Throwable throwable, Resource resource) {

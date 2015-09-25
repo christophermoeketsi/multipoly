@@ -7,9 +7,11 @@ import org.multipoly.Board.Asset;
 import org.multipoly.Board.AssetType;
 import org.multipoly.Board.Block;
 import org.multipoly.Board.Board;
+import org.multipoly.Notification.NOTIFICATIONTYPE;
+import org.multipoly.Notification.Notification;
+import org.multipoly.User.ROLE;
 import org.multipoly.User.User;
 import org.multipoly.User.UserGroup;
-import org.multipoly.User.UserType;
 
 public class QualifiedNameClassMap {
 	static public QualifiedNameClassMap INSTANCE = new QualifiedNameClassMap();
@@ -36,14 +38,20 @@ public class QualifiedNameClassMap {
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::User::LastLoggedOut", Integer.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::User::Rogue", Boolean.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::User::usergroup", UserGroup.class);
-		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::User::usertype", UserType.class);
-		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::UserType::user", User.class);
+		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::User::usertype", ROLE.class);
+		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::User::board", Board.class);
+		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::User::Surname", String.class);
+		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::User::Email", String.class);
+		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::ROLE::user", User.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Notification::Notification::Name", String.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Notification::Notification::Content", String.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Notification::Notification::Message", String.class);
+		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Notification::Notification::notificationtype", NOTIFICATIONTYPE.class);
+		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Notification::NOTIFICATIONTYPE::notification", Notification.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Board::Board::Name", String.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Board::Board::block", Block.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Board::Board::asset", Asset.class);
+		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Board::Board::user", User.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Board::Block::Name", String.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Board::Block::Colour", String.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Board::Block::board", Board.class);

@@ -4,6 +4,7 @@ import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.ContextHandlerCollection;
 import org.multipoly.commonutilties.MProperties;
 import org.multipoly.commonutilties.MUtil;
+import org.multipoly.websocket.NotificationWebsocketServlet;
 import org.restlet.ext.servlet.ServerServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,9 +27,9 @@ public class MJetty {
     public static void main(String[] args) throws Exception {
 
         MUtil.setJettySystemProperties();
-        File log4jPropertiesFile = new File("./m2-common/src/assembly/properties/log4j.properties");
+        File log4jPropertiesFile = new File("./m-common/src/assembly/properties/log4j.properties");
         if (!log4jPropertiesFile.exists()) {
-            log4jPropertiesFile = new File("./../m2-common/src/assembly/properties/log4j.properties");
+            log4jPropertiesFile = new File("./../m-common/src/assembly/properties/log4j.properties");
         }
         logger.info(String.format("loading log4j.properties from %s", log4jPropertiesFile.getAbsolutePath()));
         System.setProperty("log4j.configuration", "file:" + log4jPropertiesFile.getAbsolutePath());

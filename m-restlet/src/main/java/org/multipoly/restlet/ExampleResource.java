@@ -1,10 +1,10 @@
 package org.multipoly.restlet;
 
-import org.multipoly.restlet.app.Auth;
-import org.multipoly.restlet.app.Resource;
-import com.rorotika.cm.user.ROLE;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.multipoly.User.ROLE;
+import org.multipoly.restlet.app.Auth;
+import org.multipoly.restlet.app.Resource;
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
 import org.restlet.resource.Post;
@@ -15,7 +15,7 @@ public class ExampleResource extends ServerResource {
 
     @Post
     // specify authentication, if not specified then anybody can access the resource - or logic is used between modules specified
-    @Auth({ROLE.ADMIN, ROLE.POLICY})
+    @Auth({ROLE.ADMIN})
     public Representation post(JsonRepresentation entity) throws JSONException {
         JSONObject user = entity.getJsonObject(); // get body of json request by changing post param to JsonRepresentation
 

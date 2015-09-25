@@ -16,7 +16,7 @@ public class NotificationWebsocketServlet extends WebSocketServlet {
 
     @Override
     public void configure(WebSocketServletFactory factory) {
-        logger.fine("EtlServerWebsocketServlet start");
+        logger.fine("MServerWebsocketServlet start");
         factory.getPolicy().setIdleTimeout(60000);
         factory.setCreator(new WebsocketCreator());
     }

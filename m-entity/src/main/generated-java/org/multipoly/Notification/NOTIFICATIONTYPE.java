@@ -3,8 +3,15 @@ package org.multipoly.Notification;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.tinkerpop.gremlin.process.traversal.P;
+import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversal;
+import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource;
+import org.apache.tinkerpop.gremlin.structure.Vertex;
+import org.umlg.runtime.adaptor.StringArrayContains;
+import org.umlg.runtime.adaptor.UMLG;
 import org.umlg.runtime.adaptor.UmlgLabelConverterFactory;
 import org.umlg.runtime.collection.UmlgRuntimeProperty;
+import org.umlg.runtime.collection.persistent.UmlgSetClosableIterableImpl;
 import org.umlg.runtime.domain.DataTypeEnum;
 import org.umlg.runtime.domain.UmlgEnum;
 import org.umlg.runtime.validation.UmlgValidation;
@@ -28,6 +35,15 @@ public enum NOTIFICATIONTYPE implements UmlgEnum {
 		}
 	}
 	
+	/**
+	 * This is not a proper UML property, it is always a Set
+	 */
+	public UmlgSetClosableIterableImpl<Notification> getNotification() {
+		GraphTraversalSource graph = UMLG.get().getUnderlyingGraph().traversal();
+		GraphTraversal<Vertex, Vertex> traversal = graph.V().has("Notification", "notificationtype", P.within(name()));
+		return new UmlgSetClosableIterableImpl<>(traversal, NOTIFICATIONTYPERuntimePropertyEnum.notification);
+	}
+	
 	@Override
 	public String getQualifiedName() {
 		return "RootElement::org::multipoly::Notification::NOTIFICATIONTYPE";
@@ -38,6 +54,7 @@ public enum NOTIFICATIONTYPE implements UmlgEnum {
 	}
 
 	static public enum NOTIFICATIONTYPERuntimePropertyEnum implements UmlgRuntimeProperty {
+		notification(/* qualifiedName */ "RootElement::org::multipoly::Notification::NOTIFICATIONTYPE::notification",/* persistentName */ "notification",/* inverseName */ "notificationtype",/* inverseQualifiedName */ "RootElement::org::multipoly::Notification::Notification::notificationtype",/* isAssociationClassOne */ false,/* isMemberEndOfAssociationClass */ false,/* associationClassPropertyNameField */ "null",/* inverseAssociationClassPropertyNameField */ "null",/* isAssociationClassProperty */ false,/* isOnePrimitivePropertyOfAssociationClass */ false,/* isOnePrimitive */ false,/* isReadOnly */ false,/* dataTypeEnum */ null,/* validations */ Collections.<UmlgValidation>emptyList(),/* isManyPrimitive */ false,/* oneEnumeration */ false,/* manyEnumeration */ false,/* isControllingSide */ true,/* isComposite */ false,/* isInverseComposite */ false,/* label */ UmlgLabelConverterFactory.getUmlgLabelConverter().convert("notification_notificationtype"),/* isOneToOne */ false,/* isOneToMany */ true,/* isManyToOne */ false,/* isManyToMany */ false,/* upper */ -1,/* lower */ 0,/* inverseUpper */ 1,/* isQualified */ false,/* isInverseQualified */ false,/* isOrdered */ false,/* isInverseOrdered */ false,/* isUnique */ true,/* isInverseUnique */ true,/* isDerived */ false,/* isNavigable */ true,/* propertyType */ Notification.class,/* json */ "{\"name\": \"notification\", \"associationClassOne\": false, \"memberEndOfAssociationClass\": false, \"associationClassPropertyName\": null, \"inverseAssociationClassPropertyName\": null, \"associationClassProperty\": false, \"onePrimitivePropertyOfAssociationClass\": false, \"onePrimitive\": false, \"readOnly\": false, \"dataTypeEnum\": null, \"validations\": null, \"qualifiedName\": \"RootElement::org::multipoly::Notification::NOTIFICATIONTYPE::notification\", \"persistentName\": \"notification\", \"inverseName\": \"notificationtype\", \"inverseQualifiedName\": \"RootElement::org::multipoly::Notification::Notification::notificationtype\", \"manyPrimitive\": false, \"oneEnumeration\": false, \"manyEnumeration\": false, \"controllingSide\": true, \"composite\": false, \"inverseComposite\": false, \"oneToOne\": false, \"oneToMany\": true, \"manyToOne\": false, \"manyToMany\": false, \"upper\": -1, \"lower\": 0, \"inverseUpper\": 1, \"label\": \"notification_notificationtype\", \"qualified\": false, \"inverseQualified\": false, \"ordered\": false, \"inverseOrdered\": false, \"unique\": true, \"inverseUnique\": true, \"derived\": false, \"navigable\": true}",/* isChangeListenerAttribute */ false),
 		RootElement(/* qualifiedName */ "RootElement",/* persistentName */ "RootElement",/* inverseName */ "inverseOfRootElement",/* inverseQualifiedName */ "inverseOfRootElement",/* isAssociationClassOne */ false,/* isMemberEndOfAssociationClass */ false,/* associationClassPropertyNameField */ "null",/* inverseAssociationClassPropertyNameField */ "null",/* isAssociationClassProperty */ false,/* isOnePrimitivePropertyOfAssociationClass */ false,/* isOnePrimitive */ false,/* isReadOnly */ false,/* dataTypeEnum */ null,/* validations */ Collections.<UmlgValidation>emptyList(),/* isManyPrimitive */ false,/* oneEnumeration */ false,/* manyEnumeration */ false,/* isControllingSide */ true,/* isComposite */ false,/* isInverseComposite */ true,/* label */ UmlgLabelConverterFactory.getUmlgLabelConverter().convert("rootNOTIFICATIONTYPE"),/* isOneToOne */ true,/* isOneToMany */ false,/* isManyToOne */ false,/* isManyToMany */ false,/* upper */ -1,/* lower */ 0,/* inverseUpper */ 1,/* isQualified */ false,/* isInverseQualified */ false,/* isOrdered */ false,/* isInverseOrdered */ false,/* isUnique */ false,/* isInverseUnique */ false,/* isDerived */ false,/* isNavigable */ false,/* propertyType */ Object.class,/* json */ "{\"name\": \"RootElement\", \"associationClassOne\": false, \"memberEndOfAssociationClass\": false, \"associationClassPropertyName\": null, \"inverseAssociationClassPropertyName\": null, \"associationClassProperty\": false, \"onePrimitivePropertyOfAssociationClass\": false, \"onePrimitive\": false, \"readOnly\": false, \"dataTypeEnum\": null, \"validations\": null, \"qualifiedName\": \"RootElement\", \"persistentName\": \"RootElement\", \"inverseName\": \"inverseOfRootElement\", \"inverseQualifiedName\": \"inverseOfRootElement\", \"manyPrimitive\": false, \"oneEnumeration\": false, \"manyEnumeration\": false, \"controllingSide\": true, \"composite\": false, \"inverseComposite\": true, \"oneToOne\": true, \"oneToMany\": false, \"manyToOne\": false, \"manyToMany\": false, \"upper\": -1, \"lower\": 0, \"inverseUpper\": 1, \"label\": \"rootNOTIFICATIONTYPE\", \"qualified\": false, \"inverseQualified\": false, \"ordered\": false, \"inverseOrdered\": false, \"unique\": false, \"inverseUnique\": false, \"derived\": false, \"navigable\": false}",/* isChangeListenerAttribute */ false);
 		private String _qualifiedName;
 		private String _persistentName;
@@ -185,6 +202,9 @@ public enum NOTIFICATIONTYPE implements UmlgEnum {
 			if ( RootElement.getInverseQualifiedName().equals(inverseQualifiedName) ) {
 				return RootElement;
 			}
+			if ( notification.getInverseQualifiedName().equals(inverseQualifiedName) ) {
+				return notification;
+			}
 			return null;
 		}
 		
@@ -192,12 +212,18 @@ public enum NOTIFICATIONTYPE implements UmlgEnum {
 			if ( RootElement.getLabel().equals(_label) ) {
 				return RootElement;
 			}
+			if ( notification.getLabel().equals(_label) ) {
+				return notification;
+			}
 			return null;
 		}
 		
 		static public NOTIFICATIONTYPERuntimePropertyEnum fromQualifiedName(String qualifiedName) {
 			if ( RootElement.getQualifiedName().equals(qualifiedName) ) {
 				return RootElement;
+			}
+			if ( notification.getQualifiedName().equals(qualifiedName) ) {
+				return notification;
 			}
 			return null;
 		}

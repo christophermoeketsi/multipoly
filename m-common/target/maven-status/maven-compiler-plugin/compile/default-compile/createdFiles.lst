@@ -1,0 +1,5 @@
+org/multipoly/commonutilties/MProperties.class
+org/multipoly/commonutilties/StringUtils.class
+org/multipoly/utils/Resources.class
+org/multipoly/freemarker/Freemarker.class
+org/multipoly/commonutilties/MUtil.class

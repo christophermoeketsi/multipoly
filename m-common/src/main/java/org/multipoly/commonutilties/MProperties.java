@@ -28,23 +28,23 @@ public class MProperties {
         this.logger = LoggerFactory.getLogger(MProperties.class);
         ;
         try {
-            this.config = new PropertiesConfiguration("../resources/cm.properties");
+            this.config = new PropertiesConfiguration("../resources/multipoly.properties");
             this.config.setReloadingStrategy(new FileChangedReloadingStrategy());
-            this.logger.info("Loading cm.properties from ./../resources/cm.properties");
+            this.logger.info("Loading cm.properties from ./../resources/multipoly.properties");
         } catch (ConfigurationException e) {
             try {
-                this.config = new PropertiesConfiguration("cm.properties");
+                this.config = new PropertiesConfiguration("multipoly.properties");
                 this.logger.info("Loading cm.properties from classpath");
             } catch (ConfigurationException e1) {
                 //for jetty from ide
                 try {
-                    this.config = new PropertiesConfiguration("cm-common/src/assembly/properties/cm.properties");
-                    this.logger.info("Loading cm.properties from cm-common/src/assembly/properties/cm.properties");
+                    this.config = new PropertiesConfiguration("cm-common/src/assembly/properties/multipoly.properties");
+                    this.logger.info("Loading cm.properties from cm-common/src/assembly/properties/multipoly.properties");
                 } catch (ConfigurationException e2) {
                     //for eclipse from the ide
                     try {
-                        this.config = new PropertiesConfiguration("./../cm-common/src/assembly/properties/cm.properties");
-                        this.logger.info("Loading cm.properties from ./../cm-common/src/assembly/properties/cm.properties");
+                        this.config = new PropertiesConfiguration("./../cm-common/src/assembly/properties/multipoly.properties");
+                        this.logger.info("Loading cm.properties from ./../cm-common/src/assembly/properties/multipoly.properties");
                     } catch (ConfigurationException e3) {
                         throw new RuntimeException(e);
                     }

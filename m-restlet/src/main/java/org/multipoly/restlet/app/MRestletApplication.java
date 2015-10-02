@@ -31,7 +31,7 @@ public class MRestletApplication extends BaseMApplication {
         for (ROLE role : ROLE.values()) {
             getRoles().add(new Role(this, role.name()));
         }
-        setStatusService(new CmStatusService());
+        setStatusService(new MStatusService());
         INSTANCE = this;
     }
 

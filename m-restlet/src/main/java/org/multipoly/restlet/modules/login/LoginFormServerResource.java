@@ -40,7 +40,7 @@ public class LoginFormServerResource extends BaseServerResource {
     protected Representation post(Representation entity) {
         String redirectUri = getQueryValue("redirectUri");
         if (redirectUri==null)
-            redirectUri = "/netcm";
+            redirectUri = "/m";
         return new JsonRepresentation("{\"status\":\"success\", \"redirect\":\"" + redirectUri + "\"}");
     }
 }

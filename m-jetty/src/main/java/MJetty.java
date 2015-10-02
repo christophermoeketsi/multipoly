@@ -1,15 +1,15 @@
-import org.eclipse.jetty.server.Handler;
-import org.eclipse.jetty.server.HttpConfiguration;
-import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.server.*;
 import org.eclipse.jetty.server.handler.ContextHandlerCollection;
+import org.eclipse.jetty.servlet.ServletContextHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
+import org.multipoly.admin.Inicialise;
 import org.multipoly.commonutilties.MProperties;
 import org.multipoly.commonutilties.MUtil;
 import org.multipoly.websocket.NotificationWebsocketServlet;
 import org.restlet.ext.servlet.ServerServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.eclipse.jetty.servlet.ServletContextHandler;
-import org.eclipse.jetty.servlet.ServletHolder;
+import org.umlg.runtime.adaptor.UMLG;
 
 import java.io.File;
 
@@ -37,7 +37,6 @@ public class MJetty {
 
         Server server = new Server(MProperties.INSTANCE.getCmJettyPort());
 
-
         // Setup HTTP Configuration
         HttpConfiguration httpConf = new HttpConfiguration();
         httpConf.setSecurePort(MProperties.INSTANCE.getCmJettyPort());
@@ -49,23 +48,43 @@ public class MJetty {
         server.setHandler(context);
 
         // Restlet servlet
-        ServletHolder cmUmlgServletHolder = new ServletHolder(new ServerServlet());
-        cmUmlgServletHolder.setName("org.umlg.cm.CmApplication");
-        cmUmlgServletHolder.setInitParameter("org.restlet.application", "org.umlg.cm.CmApplication");
-        cmUmlgServletHolder.setInitParameter("org.restlet.clients", "HTTP FILE CLAP");
-        context.addServlet(cmUmlgServletHolder, "/cm/*");
+        ServletHolder servletHolder = new ServletHolder(new ServerServlet());
+        servletHolder.setName("MultipolyApplication");
+        servletHolder.setInitParameter("org.restlet.application", "Multipoly CmApplication");
+        servletHolder.setInitParameter("org.restlet.clients", "HTTP FILE CLAP");
+        context.addServlet(servletHolder, "/m/*");
 
         // Websocket servletpieter
         ServletHolder websocketServletHolder = new ServletHolder(new NotificationWebsocketServlet());
         websocketServletHolder.setName("Umlg WebSocket Servlet");
-        context.addServlet(websocketServletHolder, "/netcm/broadcastWebsocket");
-
+        context.addServlet(websocketServletHolder, "/m/broadcastWebsocket");
 
         ContextHandlerCollection contextHandlers = new ContextHandlerCollection();
         contextHandlers.setHandlers(new Handler[] {context});
+
+        ServerConnector serverConnector = new ServerConnector(server,new HttpConnectionFactory(httpConf)); // <-- use it!
+        serverConnector.setPort(MProperties.INSTANCE.getCmJettyPort());
+
+        server.setConnectors(new Connector[]
+                {serverConnector});
+        server.setHandler(contextHandlers);
+
+        setUpStart();
+        server.start();
+        //Jippo to get restlet application to start up.
+        //It is needed for websocket authentication to work
+
+       // SslClient.INSTANCE.get(server.getURI() + "netcm");
+
+        server.join();
     }
 
 
+    private static void setUpStart() {
+        Inicialise.initializeCm();
+        NotificationGuru.start();
+        UMLG.get().commit();
+    }
 
 
         static class ShutdownHook extends Thread {

@@ -212,9 +212,9 @@ public class Board extends BaseUmlgCompositionNode implements UmlgRestletNode, U
 	
 	@Override
 	public void delete() {
+		this.user.clear();
 		this.block.clear();
 		this.asset.clear();
-		this.user.clear();
 		TransactionThreadEntityVar.remove(this);
 		this.vertex.remove();
 	}
@@ -374,20 +374,20 @@ public class Board extends BaseUmlgCompositionNode implements UmlgRestletNode, U
 		}
 		if ( runtimeProperty != null && result == 0 ) {
 			switch ( runtimeProperty ) {
-				case block:
-					result = block.size();
+				case user:
+					result = user.size();
 					break;
 			
-				case Name:
-					result = Name.size();
+				case block:
+					result = block.size();
 					break;
 			
 				case asset:
 					result = asset.size();
 					break;
 			
-				case user:
-					result = user.size();
+				case Name:
+					result = Name.size();
 					break;
 			
 				default:
@@ -435,10 +435,10 @@ public class Board extends BaseUmlgCompositionNode implements UmlgRestletNode, U
 	
 	@Override
 	public void initialiseProperties() {
-		this.block =  new UmlgSetImpl<Block>(this, BoardRuntimePropertyEnum.block);
-		this.Name =  new UmlgSetImpl<String>(this, BoardRuntimePropertyEnum.Name);
-		this.asset =  new UmlgSetImpl<Asset>(this, BoardRuntimePropertyEnum.asset);
 		this.user =  new UmlgSetImpl<User>(this, BoardRuntimePropertyEnum.user);
+		this.block =  new UmlgSetImpl<Block>(this, BoardRuntimePropertyEnum.block);
+		this.asset =  new UmlgSetImpl<Asset>(this, BoardRuntimePropertyEnum.asset);
+		this.Name =  new UmlgSetImpl<String>(this, BoardRuntimePropertyEnum.Name);
 	}
 	
 	@Override
@@ -451,20 +451,20 @@ public class Board extends BaseUmlgCompositionNode implements UmlgRestletNode, U
 		}
 		if ( runtimeProperty != null ) {
 			switch ( runtimeProperty ) {
-				case block:
-					this.block =  new UmlgSetImpl<Block>(this, BoardRuntimePropertyEnum.block);
+				case user:
+					this.user =  new UmlgSetImpl<User>(this, BoardRuntimePropertyEnum.user);
 					break;
 			
-				case Name:
-					this.Name =  new UmlgSetImpl<String>(this, BoardRuntimePropertyEnum.Name);
+				case block:
+					this.block =  new UmlgSetImpl<Block>(this, BoardRuntimePropertyEnum.block);
 					break;
 			
 				case asset:
 					this.asset =  new UmlgSetImpl<Asset>(this, BoardRuntimePropertyEnum.asset);
 					break;
 			
-				case user:
-					this.user =  new UmlgSetImpl<User>(this, BoardRuntimePropertyEnum.user);
+				case Name:
+					this.Name =  new UmlgSetImpl<String>(this, BoardRuntimePropertyEnum.Name);
 					break;
 			
 			}
@@ -482,16 +482,16 @@ public class Board extends BaseUmlgCompositionNode implements UmlgRestletNode, U
 		}
 		if ( runtimeProperty != null ) {
 			switch ( runtimeProperty ) {
+				case user:
+					this.user.inverseAdder((User)umlgNode);
+					break;
+			
 				case block:
 					this.block.inverseAdder((Block)umlgNode);
 					break;
 			
 				case asset:
 					this.asset.inverseAdder((Asset)umlgNode);
-					break;
-			
-				case user:
-					this.user.inverseAdder((User)umlgNode);
 					break;
 			
 			}
@@ -713,10 +713,10 @@ public class Board extends BaseUmlgCompositionNode implements UmlgRestletNode, U
 	}
 
 	static public enum BoardRuntimePropertyEnum implements UmlgRuntimeProperty {
-		block(/* qualifiedName */ "RootElement::org::multipoly::Board::Board::block",/* persistentName */ "block",/* inverseName */ "board",/* inverseQualifiedName */ "RootElement::org::multipoly::Board::Block::board",/* isAssociationClassOne */ false,/* isMemberEndOfAssociationClass */ false,/* associationClassPropertyNameField */ "null",/* inverseAssociationClassPropertyNameField */ "null",/* isAssociationClassProperty */ false,/* isOnePrimitivePropertyOfAssociationClass */ false,/* isOnePrimitive */ false,/* isReadOnly */ false,/* dataTypeEnum */ null,/* validations */ Collections.<UmlgValidation>emptyList(),/* isManyPrimitive */ false,/* oneEnumeration */ false,/* manyEnumeration */ false,/* isControllingSide */ false,/* isComposite */ false,/* isInverseComposite */ false,/* label */ UmlgLabelConverterFactory.getUmlgLabelConverter().convert("board_block"),/* isOneToOne */ true,/* isOneToMany */ false,/* isManyToOne */ false,/* isManyToMany */ false,/* upper */ 1,/* lower */ 1,/* inverseUpper */ 1,/* isQualified */ false,/* isInverseQualified */ false,/* isOrdered */ false,/* isInverseOrdered */ false,/* isUnique */ true,/* isInverseUnique */ true,/* isDerived */ false,/* isNavigable */ true,/* propertyType */ Block.class,/* json */ "{\"name\": \"block\", \"associationClassOne\": false, \"memberEndOfAssociationClass\": false, \"associationClassPropertyName\": null, \"inverseAssociationClassPropertyName\": null, \"associationClassProperty\": false, \"onePrimitivePropertyOfAssociationClass\": false, \"onePrimitive\": false, \"readOnly\": false, \"dataTypeEnum\": null, \"validations\": null, \"qualifiedName\": \"RootElement::org::multipoly::Board::Board::block\", \"persistentName\": \"block\", \"inverseName\": \"board\", \"inverseQualifiedName\": \"RootElement::org::multipoly::Board::Block::board\", \"manyPrimitive\": false, \"oneEnumeration\": false, \"manyEnumeration\": false, \"controllingSide\": false, \"composite\": false, \"inverseComposite\": false, \"oneToOne\": true, \"oneToMany\": false, \"manyToOne\": false, \"manyToMany\": false, \"upper\": 1, \"lower\": 1, \"inverseUpper\": 1, \"label\": \"board_block\", \"qualified\": false, \"inverseQualified\": false, \"ordered\": false, \"inverseOrdered\": false, \"unique\": true, \"inverseUnique\": true, \"derived\": false, \"navigable\": true, \"tumlUri\": \"/RootElement/boards/{boardId}/block\", \"tumlOverloadedPostUri\": \"/RootElement/overloadedpost/boards/{boardId}/block\", \"tumlMetaDataUri\": \"/RootElement/blockMetaData\", \"fieldType\": \"" + FieldType.Integer + "\", \"tumlLookupUri\": \"/RootElement/boards/{boardId}/lookupFor_board_block\", \"tumlCompositeParentLookupUri\": \"\"}",/* isChangeListenerAttribute */ false,/* tumlUri */ "/RootElement/boards/{boardId}/block",/* tumlOverloadedPostUri */ "/RootElement/overloadedpost/boards/{boardId}/block",/* tumlMetaDataUri */ "/RootElement/blockMetaData",/* fieldType */ FieldType.Integer,/* tumlLookupUri */ "/RootElement/boards/{boardId}/lookupFor_board_block",/* tumlCompositeParentLookupUri */ ""),
-		Name(/* qualifiedName */ "RootElement::org::multipoly::Board::Board::Name",/* persistentName */ "Name",/* inverseName */ "inverseOf::Name",/* inverseQualifiedName */ "inverseOf::RootElement::org::multipoly::Board::Board::Name",/* isAssociationClassOne */ false,/* isMemberEndOfAssociationClass */ false,/* associationClassPropertyNameField */ "null",/* inverseAssociationClassPropertyNameField */ "null",/* isAssociationClassProperty */ false,/* isOnePrimitivePropertyOfAssociationClass */ false,/* isOnePrimitive */ true,/* isReadOnly */ false,/* dataTypeEnum */ null,/* validations */ Collections.<UmlgValidation>emptyList(),/* isManyPrimitive */ false,/* oneEnumeration */ false,/* manyEnumeration */ false,/* isControllingSide */ true,/* isComposite */ false,/* isInverseComposite */ false,/* label */ UmlgLabelConverterFactory.getUmlgLabelConverter().convert("Name"),/* isOneToOne */ false,/* isOneToMany */ false,/* isManyToOne */ true,/* isManyToMany */ false,/* upper */ 1,/* lower */ 1,/* inverseUpper */ 1,/* isQualified */ false,/* isInverseQualified */ false,/* isOrdered */ false,/* isInverseOrdered */ false,/* isUnique */ true,/* isInverseUnique */ false,/* isDerived */ false,/* isNavigable */ true,/* propertyType */ String.class,/* json */ "{\"name\": \"Name\", \"associationClassOne\": false, \"memberEndOfAssociationClass\": false, \"associationClassPropertyName\": null, \"inverseAssociationClassPropertyName\": null, \"associationClassProperty\": false, \"onePrimitivePropertyOfAssociationClass\": false, \"onePrimitive\": true, \"readOnly\": false, \"dataTypeEnum\": null, \"validations\": null, \"qualifiedName\": \"RootElement::org::multipoly::Board::Board::Name\", \"persistentName\": \"Name\", \"inverseName\": \"inverseOf::Name\", \"inverseQualifiedName\": \"inverseOf::RootElement::org::multipoly::Board::Board::Name\", \"manyPrimitive\": false, \"oneEnumeration\": false, \"manyEnumeration\": false, \"controllingSide\": true, \"composite\": false, \"inverseComposite\": false, \"oneToOne\": false, \"oneToMany\": false, \"manyToOne\": true, \"manyToMany\": false, \"upper\": 1, \"lower\": 1, \"inverseUpper\": 1, \"label\": \"Name\", \"qualified\": false, \"inverseQualified\": false, \"ordered\": false, \"inverseOrdered\": false, \"unique\": true, \"inverseUnique\": false, \"derived\": false, \"navigable\": true, \"tumlUri\": \"/RootElement/boards/{boardId}/Name\", \"tumlOverloadedPostUri\": \"/RootElement/overloadedpost/boards/{boardId}/Name\", \"tumlMetaDataUri\": \"/RootElement/stringMetaData\", \"fieldType\": \"" + FieldType.String + "\", \"tumlLookupUri\": \"\", \"tumlCompositeParentLookupUri\": \"\"}",/* isChangeListenerAttribute */ false,/* tumlUri */ "/RootElement/boards/{boardId}/Name",/* tumlOverloadedPostUri */ "/RootElement/overloadedpost/boards/{boardId}/Name",/* tumlMetaDataUri */ "/RootElement/stringMetaData",/* fieldType */ FieldType.String,/* tumlLookupUri */ "",/* tumlCompositeParentLookupUri */ ""),
-		asset(/* qualifiedName */ "RootElement::org::multipoly::Board::Board::asset",/* persistentName */ "asset",/* inverseName */ "board",/* inverseQualifiedName */ "RootElement::org::multipoly::Board::Asset::board",/* isAssociationClassOne */ false,/* isMemberEndOfAssociationClass */ false,/* associationClassPropertyNameField */ "null",/* inverseAssociationClassPropertyNameField */ "null",/* isAssociationClassProperty */ false,/* isOnePrimitivePropertyOfAssociationClass */ false,/* isOnePrimitive */ false,/* isReadOnly */ false,/* dataTypeEnum */ null,/* validations */ Collections.<UmlgValidation>emptyList(),/* isManyPrimitive */ false,/* oneEnumeration */ false,/* manyEnumeration */ false,/* isControllingSide */ true,/* isComposite */ false,/* isInverseComposite */ false,/* label */ UmlgLabelConverterFactory.getUmlgLabelConverter().convert("board_asset"),/* isOneToOne */ false,/* isOneToMany */ false,/* isManyToOne */ false,/* isManyToMany */ true,/* upper */ -1,/* lower */ 0,/* inverseUpper */ -1,/* isQualified */ false,/* isInverseQualified */ false,/* isOrdered */ false,/* isInverseOrdered */ false,/* isUnique */ true,/* isInverseUnique */ true,/* isDerived */ false,/* isNavigable */ true,/* propertyType */ Asset.class,/* json */ "{\"name\": \"asset\", \"associationClassOne\": false, \"memberEndOfAssociationClass\": false, \"associationClassPropertyName\": null, \"inverseAssociationClassPropertyName\": null, \"associationClassProperty\": false, \"onePrimitivePropertyOfAssociationClass\": false, \"onePrimitive\": false, \"readOnly\": false, \"dataTypeEnum\": null, \"validations\": null, \"qualifiedName\": \"RootElement::org::multipoly::Board::Board::asset\", \"persistentName\": \"asset\", \"inverseName\": \"board\", \"inverseQualifiedName\": \"RootElement::org::multipoly::Board::Asset::board\", \"manyPrimitive\": false, \"oneEnumeration\": false, \"manyEnumeration\": false, \"controllingSide\": true, \"composite\": false, \"inverseComposite\": false, \"oneToOne\": false, \"oneToMany\": false, \"manyToOne\": false, \"manyToMany\": true, \"upper\": -1, \"lower\": 0, \"inverseUpper\": -1, \"label\": \"board_asset\", \"qualified\": false, \"inverseQualified\": false, \"ordered\": false, \"inverseOrdered\": false, \"unique\": true, \"inverseUnique\": true, \"derived\": false, \"navigable\": true, \"tumlUri\": \"/RootElement/boards/{boardId}/asset\", \"tumlOverloadedPostUri\": \"/RootElement/overloadedpost/boards/{boardId}/asset\", \"tumlMetaDataUri\": \"/RootElement/assetMetaData\", \"fieldType\": \"" + FieldType.Date + "\", \"tumlLookupUri\": \"/RootElement/boards/{boardId}/lookupFor_board_asset\", \"tumlCompositeParentLookupUri\": \"\"}",/* isChangeListenerAttribute */ false,/* tumlUri */ "/RootElement/boards/{boardId}/asset",/* tumlOverloadedPostUri */ "/RootElement/overloadedpost/boards/{boardId}/asset",/* tumlMetaDataUri */ "/RootElement/assetMetaData",/* fieldType */ FieldType.Date,/* tumlLookupUri */ "/RootElement/boards/{boardId}/lookupFor_board_asset",/* tumlCompositeParentLookupUri */ ""),
 		user(/* qualifiedName */ "RootElement::org::multipoly::Board::Board::user",/* persistentName */ "user",/* inverseName */ "board",/* inverseQualifiedName */ "RootElement::org::multipoly::User::User::board",/* isAssociationClassOne */ false,/* isMemberEndOfAssociationClass */ false,/* associationClassPropertyNameField */ "null",/* inverseAssociationClassPropertyNameField */ "null",/* isAssociationClassProperty */ false,/* isOnePrimitivePropertyOfAssociationClass */ false,/* isOnePrimitive */ false,/* isReadOnly */ false,/* dataTypeEnum */ null,/* validations */ Collections.<UmlgValidation>emptyList(),/* isManyPrimitive */ false,/* oneEnumeration */ false,/* manyEnumeration */ false,/* isControllingSide */ true,/* isComposite */ false,/* isInverseComposite */ false,/* label */ UmlgLabelConverterFactory.getUmlgLabelConverter().convert("user_board"),/* isOneToOne */ false,/* isOneToMany */ true,/* isManyToOne */ false,/* isManyToMany */ false,/* upper */ -1,/* lower */ 0,/* inverseUpper */ 1,/* isQualified */ false,/* isInverseQualified */ false,/* isOrdered */ false,/* isInverseOrdered */ false,/* isUnique */ true,/* isInverseUnique */ true,/* isDerived */ false,/* isNavigable */ true,/* propertyType */ User.class,/* json */ "{\"name\": \"user\", \"associationClassOne\": false, \"memberEndOfAssociationClass\": false, \"associationClassPropertyName\": null, \"inverseAssociationClassPropertyName\": null, \"associationClassProperty\": false, \"onePrimitivePropertyOfAssociationClass\": false, \"onePrimitive\": false, \"readOnly\": false, \"dataTypeEnum\": null, \"validations\": null, \"qualifiedName\": \"RootElement::org::multipoly::Board::Board::user\", \"persistentName\": \"user\", \"inverseName\": \"board\", \"inverseQualifiedName\": \"RootElement::org::multipoly::User::User::board\", \"manyPrimitive\": false, \"oneEnumeration\": false, \"manyEnumeration\": false, \"controllingSide\": true, \"composite\": false, \"inverseComposite\": false, \"oneToOne\": false, \"oneToMany\": true, \"manyToOne\": false, \"manyToMany\": false, \"upper\": -1, \"lower\": 0, \"inverseUpper\": 1, \"label\": \"user_board\", \"qualified\": false, \"inverseQualified\": false, \"ordered\": false, \"inverseOrdered\": false, \"unique\": true, \"inverseUnique\": true, \"derived\": false, \"navigable\": true, \"tumlUri\": \"/RootElement/boards/{boardId}/user\", \"tumlOverloadedPostUri\": \"/RootElement/overloadedpost/boards/{boardId}/user\", \"tumlMetaDataUri\": \"/RootElement/userMetaData\", \"fieldType\": \"" + FieldType.Date + "\", \"tumlLookupUri\": \"/RootElement/boards/{boardId}/lookupFor_board_user\", \"tumlCompositeParentLookupUri\": \"\"}",/* isChangeListenerAttribute */ false,/* tumlUri */ "/RootElement/boards/{boardId}/user",/* tumlOverloadedPostUri */ "/RootElement/overloadedpost/boards/{boardId}/user",/* tumlMetaDataUri */ "/RootElement/userMetaData",/* fieldType */ FieldType.Date,/* tumlLookupUri */ "/RootElement/boards/{boardId}/lookupFor_board_user",/* tumlCompositeParentLookupUri */ ""),
+		block(/* qualifiedName */ "RootElement::org::multipoly::Board::Board::block",/* persistentName */ "block",/* inverseName */ "board",/* inverseQualifiedName */ "RootElement::org::multipoly::Board::Block::board",/* isAssociationClassOne */ false,/* isMemberEndOfAssociationClass */ false,/* associationClassPropertyNameField */ "null",/* inverseAssociationClassPropertyNameField */ "null",/* isAssociationClassProperty */ false,/* isOnePrimitivePropertyOfAssociationClass */ false,/* isOnePrimitive */ false,/* isReadOnly */ false,/* dataTypeEnum */ null,/* validations */ Collections.<UmlgValidation>emptyList(),/* isManyPrimitive */ false,/* oneEnumeration */ false,/* manyEnumeration */ false,/* isControllingSide */ false,/* isComposite */ false,/* isInverseComposite */ false,/* label */ UmlgLabelConverterFactory.getUmlgLabelConverter().convert("board_block"),/* isOneToOne */ true,/* isOneToMany */ false,/* isManyToOne */ false,/* isManyToMany */ false,/* upper */ 1,/* lower */ 1,/* inverseUpper */ 1,/* isQualified */ false,/* isInverseQualified */ false,/* isOrdered */ false,/* isInverseOrdered */ false,/* isUnique */ true,/* isInverseUnique */ true,/* isDerived */ false,/* isNavigable */ true,/* propertyType */ Block.class,/* json */ "{\"name\": \"block\", \"associationClassOne\": false, \"memberEndOfAssociationClass\": false, \"associationClassPropertyName\": null, \"inverseAssociationClassPropertyName\": null, \"associationClassProperty\": false, \"onePrimitivePropertyOfAssociationClass\": false, \"onePrimitive\": false, \"readOnly\": false, \"dataTypeEnum\": null, \"validations\": null, \"qualifiedName\": \"RootElement::org::multipoly::Board::Board::block\", \"persistentName\": \"block\", \"inverseName\": \"board\", \"inverseQualifiedName\": \"RootElement::org::multipoly::Board::Block::board\", \"manyPrimitive\": false, \"oneEnumeration\": false, \"manyEnumeration\": false, \"controllingSide\": false, \"composite\": false, \"inverseComposite\": false, \"oneToOne\": true, \"oneToMany\": false, \"manyToOne\": false, \"manyToMany\": false, \"upper\": 1, \"lower\": 1, \"inverseUpper\": 1, \"label\": \"board_block\", \"qualified\": false, \"inverseQualified\": false, \"ordered\": false, \"inverseOrdered\": false, \"unique\": true, \"inverseUnique\": true, \"derived\": false, \"navigable\": true, \"tumlUri\": \"/RootElement/boards/{boardId}/block\", \"tumlOverloadedPostUri\": \"/RootElement/overloadedpost/boards/{boardId}/block\", \"tumlMetaDataUri\": \"/RootElement/blockMetaData\", \"fieldType\": \"" + FieldType.Integer + "\", \"tumlLookupUri\": \"/RootElement/boards/{boardId}/lookupFor_board_block\", \"tumlCompositeParentLookupUri\": \"\"}",/* isChangeListenerAttribute */ false,/* tumlUri */ "/RootElement/boards/{boardId}/block",/* tumlOverloadedPostUri */ "/RootElement/overloadedpost/boards/{boardId}/block",/* tumlMetaDataUri */ "/RootElement/blockMetaData",/* fieldType */ FieldType.Integer,/* tumlLookupUri */ "/RootElement/boards/{boardId}/lookupFor_board_block",/* tumlCompositeParentLookupUri */ ""),
+		asset(/* qualifiedName */ "RootElement::org::multipoly::Board::Board::asset",/* persistentName */ "asset",/* inverseName */ "board",/* inverseQualifiedName */ "RootElement::org::multipoly::Board::Asset::board",/* isAssociationClassOne */ false,/* isMemberEndOfAssociationClass */ false,/* associationClassPropertyNameField */ "null",/* inverseAssociationClassPropertyNameField */ "null",/* isAssociationClassProperty */ false,/* isOnePrimitivePropertyOfAssociationClass */ false,/* isOnePrimitive */ false,/* isReadOnly */ false,/* dataTypeEnum */ null,/* validations */ Collections.<UmlgValidation>emptyList(),/* isManyPrimitive */ false,/* oneEnumeration */ false,/* manyEnumeration */ false,/* isControllingSide */ true,/* isComposite */ false,/* isInverseComposite */ false,/* label */ UmlgLabelConverterFactory.getUmlgLabelConverter().convert("board_asset"),/* isOneToOne */ false,/* isOneToMany */ false,/* isManyToOne */ false,/* isManyToMany */ true,/* upper */ -1,/* lower */ 0,/* inverseUpper */ -1,/* isQualified */ false,/* isInverseQualified */ false,/* isOrdered */ false,/* isInverseOrdered */ false,/* isUnique */ true,/* isInverseUnique */ true,/* isDerived */ false,/* isNavigable */ true,/* propertyType */ Asset.class,/* json */ "{\"name\": \"asset\", \"associationClassOne\": false, \"memberEndOfAssociationClass\": false, \"associationClassPropertyName\": null, \"inverseAssociationClassPropertyName\": null, \"associationClassProperty\": false, \"onePrimitivePropertyOfAssociationClass\": false, \"onePrimitive\": false, \"readOnly\": false, \"dataTypeEnum\": null, \"validations\": null, \"qualifiedName\": \"RootElement::org::multipoly::Board::Board::asset\", \"persistentName\": \"asset\", \"inverseName\": \"board\", \"inverseQualifiedName\": \"RootElement::org::multipoly::Board::Asset::board\", \"manyPrimitive\": false, \"oneEnumeration\": false, \"manyEnumeration\": false, \"controllingSide\": true, \"composite\": false, \"inverseComposite\": false, \"oneToOne\": false, \"oneToMany\": false, \"manyToOne\": false, \"manyToMany\": true, \"upper\": -1, \"lower\": 0, \"inverseUpper\": -1, \"label\": \"board_asset\", \"qualified\": false, \"inverseQualified\": false, \"ordered\": false, \"inverseOrdered\": false, \"unique\": true, \"inverseUnique\": true, \"derived\": false, \"navigable\": true, \"tumlUri\": \"/RootElement/boards/{boardId}/asset\", \"tumlOverloadedPostUri\": \"/RootElement/overloadedpost/boards/{boardId}/asset\", \"tumlMetaDataUri\": \"/RootElement/assetMetaData\", \"fieldType\": \"" + FieldType.Date + "\", \"tumlLookupUri\": \"/RootElement/boards/{boardId}/lookupFor_board_asset\", \"tumlCompositeParentLookupUri\": \"\"}",/* isChangeListenerAttribute */ false,/* tumlUri */ "/RootElement/boards/{boardId}/asset",/* tumlOverloadedPostUri */ "/RootElement/overloadedpost/boards/{boardId}/asset",/* tumlMetaDataUri */ "/RootElement/assetMetaData",/* fieldType */ FieldType.Date,/* tumlLookupUri */ "/RootElement/boards/{boardId}/lookupFor_board_asset",/* tumlCompositeParentLookupUri */ ""),
+		Name(/* qualifiedName */ "RootElement::org::multipoly::Board::Board::Name",/* persistentName */ "Name",/* inverseName */ "inverseOf::Name",/* inverseQualifiedName */ "inverseOf::RootElement::org::multipoly::Board::Board::Name",/* isAssociationClassOne */ false,/* isMemberEndOfAssociationClass */ false,/* associationClassPropertyNameField */ "null",/* inverseAssociationClassPropertyNameField */ "null",/* isAssociationClassProperty */ false,/* isOnePrimitivePropertyOfAssociationClass */ false,/* isOnePrimitive */ true,/* isReadOnly */ false,/* dataTypeEnum */ null,/* validations */ Collections.<UmlgValidation>emptyList(),/* isManyPrimitive */ false,/* oneEnumeration */ false,/* manyEnumeration */ false,/* isControllingSide */ true,/* isComposite */ false,/* isInverseComposite */ false,/* label */ UmlgLabelConverterFactory.getUmlgLabelConverter().convert("Name"),/* isOneToOne */ false,/* isOneToMany */ false,/* isManyToOne */ true,/* isManyToMany */ false,/* upper */ 1,/* lower */ 1,/* inverseUpper */ 1,/* isQualified */ false,/* isInverseQualified */ false,/* isOrdered */ false,/* isInverseOrdered */ false,/* isUnique */ true,/* isInverseUnique */ false,/* isDerived */ false,/* isNavigable */ true,/* propertyType */ String.class,/* json */ "{\"name\": \"Name\", \"associationClassOne\": false, \"memberEndOfAssociationClass\": false, \"associationClassPropertyName\": null, \"inverseAssociationClassPropertyName\": null, \"associationClassProperty\": false, \"onePrimitivePropertyOfAssociationClass\": false, \"onePrimitive\": true, \"readOnly\": false, \"dataTypeEnum\": null, \"validations\": null, \"qualifiedName\": \"RootElement::org::multipoly::Board::Board::Name\", \"persistentName\": \"Name\", \"inverseName\": \"inverseOf::Name\", \"inverseQualifiedName\": \"inverseOf::RootElement::org::multipoly::Board::Board::Name\", \"manyPrimitive\": false, \"oneEnumeration\": false, \"manyEnumeration\": false, \"controllingSide\": true, \"composite\": false, \"inverseComposite\": false, \"oneToOne\": false, \"oneToMany\": false, \"manyToOne\": true, \"manyToMany\": false, \"upper\": 1, \"lower\": 1, \"inverseUpper\": 1, \"label\": \"Name\", \"qualified\": false, \"inverseQualified\": false, \"ordered\": false, \"inverseOrdered\": false, \"unique\": true, \"inverseUnique\": false, \"derived\": false, \"navigable\": true, \"tumlUri\": \"/RootElement/boards/{boardId}/Name\", \"tumlOverloadedPostUri\": \"/RootElement/overloadedpost/boards/{boardId}/Name\", \"tumlMetaDataUri\": \"/RootElement/stringMetaData\", \"fieldType\": \"" + FieldType.String + "\", \"tumlLookupUri\": \"\", \"tumlCompositeParentLookupUri\": \"\"}",/* isChangeListenerAttribute */ false,/* tumlUri */ "/RootElement/boards/{boardId}/Name",/* tumlOverloadedPostUri */ "/RootElement/overloadedpost/boards/{boardId}/Name",/* tumlMetaDataUri */ "/RootElement/stringMetaData",/* fieldType */ FieldType.String,/* tumlLookupUri */ "",/* tumlCompositeParentLookupUri */ ""),
 		RootElement(/* qualifiedName */ "RootElement",/* persistentName */ "RootElement",/* inverseName */ "inverseOfRootElement",/* inverseQualifiedName */ "inverseOfRootElement",/* isAssociationClassOne */ false,/* isMemberEndOfAssociationClass */ false,/* associationClassPropertyNameField */ "null",/* inverseAssociationClassPropertyNameField */ "null",/* isAssociationClassProperty */ false,/* isOnePrimitivePropertyOfAssociationClass */ false,/* isOnePrimitive */ false,/* isReadOnly */ false,/* dataTypeEnum */ null,/* validations */ Collections.<UmlgValidation>emptyList(),/* isManyPrimitive */ false,/* oneEnumeration */ false,/* manyEnumeration */ false,/* isControllingSide */ true,/* isComposite */ false,/* isInverseComposite */ true,/* label */ UmlgLabelConverterFactory.getUmlgLabelConverter().convert("rootBoard"),/* isOneToOne */ true,/* isOneToMany */ false,/* isManyToOne */ false,/* isManyToMany */ false,/* upper */ -1,/* lower */ 0,/* inverseUpper */ 1,/* isQualified */ false,/* isInverseQualified */ false,/* isOrdered */ false,/* isInverseOrdered */ false,/* isUnique */ false,/* isInverseUnique */ false,/* isDerived */ false,/* isNavigable */ false,/* propertyType */ Object.class,/* json */ "{\"name\": \"RootElement\", \"associationClassOne\": false, \"memberEndOfAssociationClass\": false, \"associationClassPropertyName\": null, \"inverseAssociationClassPropertyName\": null, \"associationClassProperty\": false, \"onePrimitivePropertyOfAssociationClass\": false, \"onePrimitive\": false, \"readOnly\": false, \"dataTypeEnum\": null, \"validations\": null, \"qualifiedName\": \"RootElement\", \"persistentName\": \"RootElement\", \"inverseName\": \"inverseOfRootElement\", \"inverseQualifiedName\": \"inverseOfRootElement\", \"manyPrimitive\": false, \"oneEnumeration\": false, \"manyEnumeration\": false, \"controllingSide\": true, \"composite\": false, \"inverseComposite\": true, \"oneToOne\": true, \"oneToMany\": false, \"manyToOne\": false, \"manyToMany\": false, \"upper\": -1, \"lower\": 0, \"inverseUpper\": 1, \"label\": \"rootBoard\", \"qualified\": false, \"inverseQualified\": false, \"ordered\": false, \"inverseOrdered\": false, \"unique\": false, \"inverseUnique\": false, \"derived\": false, \"navigable\": false, \"tumlUri\": \"/RootElement\", \"tumlOverloadedPostUri\": \"/RootElement\", \"tumlMetaDataUri\": \"\", \"fieldType\": \"" + FieldType.String + "\", \"tumlLookupUri\": \"\", \"tumlCompositeParentLookupUri\": \"\"}",/* isChangeListenerAttribute */ false,/* tumlUri */ "/RootElement",/* tumlOverloadedPostUri */ "/RootElement",/* tumlMetaDataUri */ "",/* fieldType */ FieldType.String,/* tumlLookupUri */ "",/* tumlCompositeParentLookupUri */ ""),
 		id(/* qualifiedName */ "not_applicable",/* persistentName */ "not_applicable",/* inverseName */ "inverseOf::not_applicable",/* inverseQualifiedName */ "inverseOf::not_applicable",/* isAssociationClassOne */ false,/* isMemberEndOfAssociationClass */ false,/* associationClassPropertyNameField */ "null",/* inverseAssociationClassPropertyNameField */ "null",/* isAssociationClassProperty */ false,/* isOnePrimitivePropertyOfAssociationClass */ false,/* isOnePrimitive */ true,/* isReadOnly */ true,/* dataTypeEnum */ null,/* validations */ Collections.<UmlgValidation>emptyList(),/* isManyPrimitive */ false,/* oneEnumeration */ false,/* manyEnumeration */ false,/* isControllingSide */ false,/* isComposite */ false,/* isInverseComposite */ false,/* label */ UmlgLabelConverterFactory.getUmlgLabelConverter().convert(""),/* isOneToOne */ true,/* isOneToMany */ false,/* isManyToOne */ true,/* isManyToMany */ false,/* upper */ 1,/* lower */ 1,/* inverseUpper */ 1,/* isQualified */ false,/* isInverseQualified */ false,/* isOrdered */ false,/* isInverseOrdered */ false,/* isUnique */ false,/* isInverseUnique */ true,/* isDerived */ false,/* isNavigable */ true,/* propertyType */ Object.class,/* json */ "{\"name\": \"id\", \"associationClassOne\": false, \"memberEndOfAssociationClass\": false, \"associationClassPropertyName\": null, \"inverseAssociationClassPropertyName\": null, \"associationClassProperty\": false, \"onePrimitivePropertyOfAssociationClass\": false, \"onePrimitive\": true, \"readOnly\": true, \"dataTypeEnum\": null, \"validations\": null, \"qualifiedName\": \"not_applicable\", \"persistentName\": \"not_applicable\", \"inverseName\": \"inverseOf::not_applicable\", \"inverseQualifiedName\": \"inverseOf::not_applicable\", \"manyPrimitive\": false, \"oneEnumeration\": false, \"manyEnumeration\": false, \"controllingSide\": false, \"composite\": false, \"inverseComposite\": false, \"oneToOne\": true, \"oneToMany\": false, \"manyToOne\": true, \"manyToMany\": false, \"upper\": 1, \"lower\": 1, \"inverseUpper\": 1, \"label\": \"\", \"qualified\": false, \"inverseQualified\": false, \"ordered\": false, \"inverseOrdered\": false, \"unique\": false, \"inverseUnique\": true, \"derived\": false, \"navigable\": true, \"tumlUri\": \"\", \"tumlOverloadedPostUri\": \"\", \"tumlMetaDataUri\": \"\", \"fieldType\": \"" + FieldType.Integer + "\", \"tumlLookupUri\": \"\", \"tumlCompositeParentLookupUri\": \"\"}",/* isChangeListenerAttribute */ false,/* tumlUri */ "",/* tumlOverloadedPostUri */ "",/* tumlMetaDataUri */ "",/* fieldType */ FieldType.Integer,/* tumlLookupUri */ "",/* tumlCompositeParentLookupUri */ "");
 		private String _qualifiedName;
@@ -886,17 +886,17 @@ public class Board extends BaseUmlgCompositionNode implements UmlgRestletNode, U
 			if ( RootElement.getInverseQualifiedName().equals(inverseQualifiedName) ) {
 				return RootElement;
 			}
-			if ( user.getInverseQualifiedName().equals(inverseQualifiedName) ) {
-				return user;
+			if ( Name.getInverseQualifiedName().equals(inverseQualifiedName) ) {
+				return Name;
 			}
 			if ( asset.getInverseQualifiedName().equals(inverseQualifiedName) ) {
 				return asset;
 			}
-			if ( Name.getInverseQualifiedName().equals(inverseQualifiedName) ) {
-				return Name;
-			}
 			if ( block.getInverseQualifiedName().equals(inverseQualifiedName) ) {
 				return block;
+			}
+			if ( user.getInverseQualifiedName().equals(inverseQualifiedName) ) {
+				return user;
 			}
 			return null;
 		}
@@ -908,17 +908,17 @@ public class Board extends BaseUmlgCompositionNode implements UmlgRestletNode, U
 			if ( RootElement.getLabel().equals(_label) ) {
 				return RootElement;
 			}
-			if ( user.getLabel().equals(_label) ) {
-				return user;
+			if ( Name.getLabel().equals(_label) ) {
+				return Name;
 			}
 			if ( asset.getLabel().equals(_label) ) {
 				return asset;
 			}
-			if ( Name.getLabel().equals(_label) ) {
-				return Name;
-			}
 			if ( block.getLabel().equals(_label) ) {
 				return block;
+			}
+			if ( user.getLabel().equals(_label) ) {
+				return user;
 			}
 			return null;
 		}
@@ -930,17 +930,17 @@ public class Board extends BaseUmlgCompositionNode implements UmlgRestletNode, U
 			if ( RootElement.getQualifiedName().equals(qualifiedName) ) {
 				return RootElement;
 			}
-			if ( user.getQualifiedName().equals(qualifiedName) ) {
-				return user;
+			if ( Name.getQualifiedName().equals(qualifiedName) ) {
+				return Name;
 			}
 			if ( asset.getQualifiedName().equals(qualifiedName) ) {
 				return asset;
 			}
-			if ( Name.getQualifiedName().equals(qualifiedName) ) {
-				return Name;
-			}
 			if ( block.getQualifiedName().equals(qualifiedName) ) {
 				return block;
+			}
+			if ( user.getQualifiedName().equals(qualifiedName) ) {
+				return user;
 			}
 			return null;
 		}

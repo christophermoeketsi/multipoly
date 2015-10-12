@@ -17,13 +17,13 @@ import org.umlg.runtime.adaptor.UmlgTmpIdManager;
 import org.umlg.runtime.restlet.util.UmlgURLDecoder;
 import org.umlg.runtime.util.ObjectMapperFactory;
 
-public class ROLE_usertype_user_LookupServerResourceImpl extends ServerResource {
+public class ROLE_role_user_LookupServerResourceImpl extends ServerResource {
 	private Object roleId;
 
 	/**
-	 * default constructor for ROLE_usertype_user_LookupServerResourceImpl
+	 * default constructor for ROLE_role_user_LookupServerResourceImpl
 	 */
-	public ROLE_usertype_user_LookupServerResourceImpl()  {
+	public ROLE_role_user_LookupServerResourceImpl()  {
 		setNegotiated(false);
 	}
 

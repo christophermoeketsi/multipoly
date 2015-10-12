@@ -38,10 +38,10 @@ public class QualifiedNameClassMap {
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::User::LastLoggedOut", Integer.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::User::Rogue", Boolean.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::User::usergroup", UserGroup.class);
-		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::User::usertype", ROLE.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::User::board", Board.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::User::Surname", String.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::User::Email", String.class);
+		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::User::role", ROLE.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::User::ROLE::user", User.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Notification::Notification::Name", String.class);
 		this.qualifiedNameClassMap.put("RootElement::org::multipoly::Notification::Notification::Content", String.class);

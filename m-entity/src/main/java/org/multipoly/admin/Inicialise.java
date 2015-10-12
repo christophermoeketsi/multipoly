@@ -1,7 +1,9 @@
 package org.multipoly.admin;
 
+import org.multipoly.User.ROLE;
 import org.multipoly.User.User;
 import org.multipoly.User.UserGroup;
+import org.umlg.runtime.adaptor.UMLG;
 import org.umlg.runtime.collection.UmlgSet;
 
 /**
@@ -10,9 +12,10 @@ import org.umlg.runtime.collection.UmlgSet;
 public class Inicialise {
 
 
-    public static void createBaseData(){
+    public static void createBaseData() {
         captureUserGroupsAndUsers();
     }
+
     private static void captureUserGroupsAndUsers() {
         // check if the admin user exists.
         UmlgSet<? extends UserGroup> userGroups = UserGroup.allInstances(new org.umlg.runtime.collection.Filter<UserGroup>() {
@@ -27,8 +30,7 @@ public class Inicialise {
             adminGroup.setName("Admin");
         }
 
-        User user = (User) User.allInstances().select(u -> u.getName() == "admin");
-        if (user == null) {
+        if (User.allInstances().select(u -> u.getName() == "admin").size() == 0) {
             //admin
             User admin = new User();
             admin.setName("admin");
@@ -36,8 +38,18 @@ public class Inicialise {
             admin.setUsername("admin");
             admin.setEmail("admin@multipoly.com");
             admin.setPassword("admin");
-            adminGroup.addToUser(user);
+            adminGroup.addToUser(admin);
+            admin.setLastLoggedIn(1);
+            admin.setLastLoggedOut(1);
+            admin.setUsertype(ROLE.ADMIN);
         }
+
+        UMLG.get().commit();
+    }
+
+
+    public static void main(String[] args) {
+        createBaseData();
     }
 
 }

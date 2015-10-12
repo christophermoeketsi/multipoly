@@ -35,19 +35,22 @@
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_3R28gGOCEeWGrNM-T_NcxQ" name="usergroup" type="_Wt5iEGOCEeWGrNM-T_NcxQ" association="_3R1uYGOCEeWGrNM-T_NcxQ"/>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_35oHIGOCEeWGrNM-T_NcxQ" name="usertype" type="_yYahUGOCEeWGrNM-T_NcxQ" association="_35ngEGOCEeWGrNM-T_NcxQ"/>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_5nJmomOHEeWGrNM-T_NcxQ" name="board" type="_cAU8wGIIEeWdJKWWnLfREg" association="_5nIYgGOHEeWGrNM-T_NcxQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5nJmomOHEeWGrNM-T_NcxQ" name="board" type="_cAU8wGIIEeWdJKWWnLfREg" association="_5nIYgGOHEeWGrNM-T_NcxQ">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NTHUUHBUEeWU14-nwMXQgw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NTJJgHBUEeWU14-nwMXQgw" value="1"/>
+          </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_AXDXsGOJEeWGrNM-T_NcxQ" name="Surname">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_ClOfcGOJEeWGrNM-T_NcxQ" name="Email">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_TiZY8WOOEeWGrNM-T_NcxQ" name="role" type="_yYahUGOCEeWGrNM-T_NcxQ" association="_TiYK0GOOEeWGrNM-T_NcxQ"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Enumeration" xmi:id="_yYahUGOCEeWGrNM-T_NcxQ" name="ROLE">
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_35oHIWOCEeWGrNM-T_NcxQ" name="user" type="_cntOEGOCEeWGrNM-T_NcxQ" association="_35ngEGOCEeWGrNM-T_NcxQ">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FzuDcGODEeWGrNM-T_NcxQ"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Fzv4oGODEeWGrNM-T_NcxQ" value="*"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_TiZY8GOOEeWGrNM-T_NcxQ" name="user" type="_cntOEGOCEeWGrNM-T_NcxQ" association="_TiYK0GOOEeWGrNM-T_NcxQ">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XcqPEGOOEeWGrNM-T_NcxQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XcsrUGOOEeWGrNM-T_NcxQ" value="*"/>
           </ownedAttribute>
           <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_z5pqkGOCEeWGrNM-T_NcxQ" name="PALYER"/>
           <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_1asmkGOCEeWGrNM-T_NcxQ" name="ADMIN"/>
@@ -57,9 +60,9 @@
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3R2VcWOCEeWGrNM-T_NcxQ" key="nature" value="UML_Nature"/>
           </eAnnotations>
         </packagedElement>
-        <packagedElement xmi:type="uml:Association" xmi:id="_35ngEGOCEeWGrNM-T_NcxQ" name="user_role" memberEnd="_35oHIGOCEeWGrNM-T_NcxQ _35oHIWOCEeWGrNM-T_NcxQ">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_35ngEWOCEeWGrNM-T_NcxQ" source="org.eclipse.papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_35ngEmOCEeWGrNM-T_NcxQ" key="nature" value="UML_Nature"/>
+        <packagedElement xmi:type="uml:Association" xmi:id="_TiYK0GOOEeWGrNM-T_NcxQ" name="user_role" memberEnd="_TiZY8GOOEeWGrNM-T_NcxQ _TiZY8WOOEeWGrNM-T_NcxQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TiYx4GOOEeWGrNM-T_NcxQ" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TiYx4WOOEeWGrNM-T_NcxQ" key="nature" value="UML_Nature"/>
           </eAnnotations>
         </packagedElement>
       </packagedElement>

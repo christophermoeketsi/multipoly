@@ -47,8 +47,8 @@ import org.multipoly.Notification.Notifications_LookupServerResourceImpl;
 import org.multipoly.Notification.Notifications_ServerResourceImpl;
 import org.multipoly.User.Board_board_user_LookupServerResourceImpl;
 import org.multipoly.User.Board_board_user_ServerResourceImpl;
-import org.multipoly.User.ROLE_usertype_user_LookupServerResourceImpl;
-import org.multipoly.User.ROLE_usertype_user_ServerResourceImpl;
+import org.multipoly.User.ROLE_role_user_LookupServerResourceImpl;
+import org.multipoly.User.ROLE_role_user_ServerResourceImpl;
 import org.multipoly.User.UserCompositePathServerResourceImpl;
 import org.multipoly.User.UserGroupCompositePathServerResourceImpl;
 import org.multipoly.User.UserGroupLookupServerResourceImpl;
@@ -98,7 +98,7 @@ public enum RestletRouterEnum {
 	UserGroup_user(/*  */ "/usergroups/{usergroupId}/user",/*  */ UserGroup_usergroup_user_ServerResourceImpl.class),
 	User_usergroup(/*  */ "/users/{userId}/usergroup",/*  */ User_user_usergroup_ServerResourceImpl.class),
 	User_board(/*  */ "/users/{userId}/board",/*  */ User_user_board_ServerResourceImpl.class),
-	ROLE_user(/*  */ "/roles/{roleId}/user",/*  */ ROLE_usertype_user_ServerResourceImpl.class),
+	ROLE_user(/*  */ "/roles/{roleId}/user",/*  */ ROLE_role_user_ServerResourceImpl.class),
 	NOTIFICATIONTYPE_notification(/*  */ "/notificationtypes/{notificationtypeId}/notification",/*  */ NOTIFICATIONTYPE_notificationtype_notification_ServerResourceImpl.class),
 	Board_block(/*  */ "/boards/{boardId}/block",/*  */ Board_board_block_ServerResourceImpl.class),
 	Board_asset(/*  */ "/boards/{boardId}/asset",/*  */ Board_board_asset_ServerResourceImpl.class),
@@ -111,7 +111,7 @@ public enum RestletRouterEnum {
 	UserGroup_user_forwardToLookup(/*  */ "/usergroups/{usergroupId}/user_forwardToLookup",/*  */ UserGroup_usergroup_user_LookupServerResourceImpl.class),
 	User_usergroup_forwardToLookup(/*  */ "/users/{userId}/usergroup_forwardToLookup",/*  */ User_user_usergroup_LookupServerResourceImpl.class),
 	User_board_forwardToLookup(/*  */ "/users/{userId}/board_forwardToLookup",/*  */ User_user_board_LookupServerResourceImpl.class),
-	ROLE_user_forwardToLookup(/*  */ "/roles/{roleId}/user_forwardToLookup",/*  */ ROLE_usertype_user_LookupServerResourceImpl.class),
+	ROLE_user_forwardToLookup(/*  */ "/roles/{roleId}/user_forwardToLookup",/*  */ ROLE_role_user_LookupServerResourceImpl.class),
 	NOTIFICATIONTYPE_notification_forwardToLookup(/*  */ "/notificationtypes/{notificationtypeId}/notification_forwardToLookup",/*  */ NOTIFICATIONTYPE_notificationtype_notification_LookupServerResourceImpl.class),
 	Board_block_forwardToLookup(/*  */ "/boards/{boardId}/block_forwardToLookup",/*  */ Board_board_block_LookupServerResourceImpl.class),
 	Board_asset_forwardToLookup(/*  */ "/boards/{boardId}/asset_forwardToLookup",/*  */ Board_board_asset_LookupServerResourceImpl.class),

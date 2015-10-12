@@ -22,13 +22,13 @@ import org.umlg.runtime.restlet.util.UmlgNodeJsonHolder;
 import org.umlg.runtime.restlet.util.UmlgURLDecoder;
 import org.umlg.runtime.util.ObjectMapperFactory;
 
-public class ROLE_usertype_user_ServerResourceImpl extends ServerResource {
+public class ROLE_role_user_ServerResourceImpl extends ServerResource {
 	private Object roleId;
 
 	/**
-	 * default constructor for ROLE_usertype_user_ServerResourceImpl
+	 * default constructor for ROLE_role_user_ServerResourceImpl
 	 */
-	public ROLE_usertype_user_ServerResourceImpl()  {
+	public ROLE_role_user_ServerResourceImpl()  {
 		setNegotiated(false);
 	}
 
@@ -183,7 +183,7 @@ public class ROLE_usertype_user_ServerResourceImpl extends ServerResource {
 		}
 		try {
 			Object id = propertyMap.get("id");
-			propertyMap.remove("usertype");
+			propertyMap.remove("role");
 			User childResource = UMLG.get().getEntity(id);
 			parentResource.addToUser(childResource);
 			objectList.add(new UmlgNodeJsonHolder(childResource));

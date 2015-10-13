@@ -17,6 +17,7 @@ import org.restlet.resource.ServerResource;
 import org.umlg.runtime.adaptor.UMLG;
 import org.umlg.runtime.adaptor.UmlgExceptionUtilFactory;
 import org.umlg.runtime.adaptor.UmlgSchemaFactory;
+import org.umlg.runtime.collection.ocl.BooleanExpressionEvaluator;
 import org.umlg.runtime.domain.json.ToJsonUtil;
 import org.umlg.runtime.restlet.util.UmlgNodeJsonHolder;
 import org.umlg.runtime.restlet.util.UmlgURLDecoder;
@@ -39,13 +40,14 @@ public class User_user_board_ServerResourceImpl extends ServerResource {
 			User parentResource = UMLG.get().getEntity(userId);
 			StringBuilder json = new StringBuilder();
 			json.append("[");
-			json.append("{\"data\": ");
-			if ( parentResource.getBoard() != null && parentResource.getBoard().getClass() == Board.class ) {
-				json.append(ToJsonUtil.toJsonWithoutCompositeParent(parentResource.getBoard()));
-			} else {
-				json.append("null");
-			}
-			json.append(",");
+			json.append("{\"data\": [");
+			json.append(ToJsonUtil.toJsonWithoutCompositeParent(parentResource.getBoard().select(new BooleanExpressionEvaluator<Board>() {
+						@Override
+						public Boolean evaluate(Board e) {
+							return e.getClass() == Board.class;
+						}
+					})));
+			json.append("],");
 			json.append(" \"meta\" : {");
 			json.append("\"qualifiedName\": \"RootElement::org::multipoly::User::User::board\"");
 			json.append(",\"qualifiedNameFrom\": \"" + parentResource.getQualifiedName() + "\"");
@@ -134,14 +136,14 @@ public class User_user_board_ServerResourceImpl extends ServerResource {
 			for ( Class<? extends Board> baseClass : resultMap.keySet() ) {
 				List<UmlgNodeJsonHolder> objectList = resultMap.get(baseClass);
 				int objectListCount = 1;
-				result.append("{\"data\": ");
+				result.append("{\"data\": [");
 				for ( UmlgNodeJsonHolder object : objectList ) {
 					result.append(object.toJson());
 					if ( objectListCount++ < objectList.size() ) {
 						result.append(",");
 					}
 				}
-				result.append(",");
+				result.append("],");
 				result.append(" \"meta\" : {");
 				result.append("\"qualifiedName\": \"RootElement::org::multipoly::User::User::board\"");
 				result.append(", \"to\": ");

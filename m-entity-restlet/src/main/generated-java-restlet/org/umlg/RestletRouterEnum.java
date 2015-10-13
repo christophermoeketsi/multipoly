@@ -60,7 +60,7 @@ import org.multipoly.User.UserGroups_LookupServerResourceImpl;
 import org.multipoly.User.UserGroups_ServerResourceImpl;
 import org.multipoly.User.UserLookupServerResourceImpl;
 import org.multipoly.User.UserServerResourceImpl;
-import org.multipoly.User.User_user_board_lookUpForOne_ServerResourceImpl;
+import org.multipoly.User.User_user_board_lookUpForMany_ServerResourceImpl;
 import org.multipoly.User.User_user_usergroup_LookupServerResourceImpl;
 import org.multipoly.User.User_user_usergroup_ServerResourceImpl;
 import org.multipoly.User.User_user_usergroup_lookUpForOne_ServerResourceImpl;
@@ -135,10 +135,10 @@ public enum RestletRouterEnum {
 	ASSETS_forwardToLookup(/*  */ "/assets_forwardToLookup",/*  */ Assets_LookupServerResourceImpl.class),
 	ROOT(/*  */ "/umlgRoot",/*  */ RootServerResourceImpl.class),
 	USER_lookupFor_user_usergroup(/*  */ "/users/{userId}/lookupFor_user_usergroup",/*  */ User_user_usergroup_lookUpForOne_ServerResourceImpl.class),
-	USER_lookupFor_user_board(/*  */ "/users/{userId}/lookupFor_user_board",/*  */ User_user_board_lookUpForOne_ServerResourceImpl.class),
 	BOARD_lookupFor_board_block(/*  */ "/boards/{boardId}/lookupFor_board_block",/*  */ Board_board_block_lookUpForOne_ServerResourceImpl.class),
 	BLOCK_lookupFor_block_board(/*  */ "/blocks/{blockId}/lookupFor_block_board",/*  */ Block_block_board_lookUpForOne_ServerResourceImpl.class),
 	USERGROUP_lookupFor_usergroup_user(/*  */ "/usergroups/{usergroupId}/lookupFor_usergroup_user",/*  */ UserGroup_usergroup_user_lookUpForMany_ServerResourceImpl.class),
+	USER_lookupFor_user_board(/*  */ "/users/{userId}/lookupFor_user_board",/*  */ User_user_board_lookUpForMany_ServerResourceImpl.class),
 	BOARD_lookupFor_board_asset(/*  */ "/boards/{boardId}/lookupFor_board_asset",/*  */ Board_board_asset_lookUpForMany_ServerResourceImpl.class),
 	BOARD_lookupFor_board_user(/*  */ "/boards/{boardId}/lookupFor_board_user",/*  */ Board_board_user_lookUpForMany_ServerResourceImpl.class),
 	BLOCK_lookupFor_block_asset(/*  */ "/blocks/{blockId}/lookupFor_block_asset",/*  */ Block_block_asset_lookUpForMany_ServerResourceImpl.class),
@@ -233,10 +233,10 @@ public enum RestletRouterEnum {
 		RestletRouterEnum.ASSETS_forwardToLookup.attach(router);
 		RestletRouterEnum.ROOT.attach(router);
 		RestletRouterEnum.USER_lookupFor_user_usergroup.attach(router);
-		RestletRouterEnum.USER_lookupFor_user_board.attach(router);
 		RestletRouterEnum.BOARD_lookupFor_board_block.attach(router);
 		RestletRouterEnum.BLOCK_lookupFor_block_board.attach(router);
 		RestletRouterEnum.USERGROUP_lookupFor_usergroup_user.attach(router);
+		RestletRouterEnum.USER_lookupFor_user_board.attach(router);
 		RestletRouterEnum.BOARD_lookupFor_board_asset.attach(router);
 		RestletRouterEnum.BOARD_lookupFor_board_user.attach(router);
 		RestletRouterEnum.BLOCK_lookupFor_block_asset.attach(router);

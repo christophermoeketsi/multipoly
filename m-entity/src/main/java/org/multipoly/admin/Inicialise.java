@@ -38,10 +38,11 @@ public class Inicialise {
             admin.setUsername("admin");
             admin.setEmail("admin@multipoly.com");
             admin.setPassword("admin");
-            adminGroup.addToUser(admin);
             admin.setLastLoggedIn(1);
             admin.setLastLoggedOut(1);
-            admin.setUsertype(ROLE.ADMIN);
+            admin.addToRole(ROLE.ADMIN);
+            adminGroup.addToUser(admin);
+
         }
 
         UMLG.get().commit();

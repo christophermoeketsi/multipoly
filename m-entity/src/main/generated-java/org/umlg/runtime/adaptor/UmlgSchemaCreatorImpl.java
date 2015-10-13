@@ -52,7 +52,7 @@ public class UmlgSchemaCreatorImpl implements UmlgSchemaCreator {
 		this.qualifiedNameEdgeSchemaSet.add("allinstances");
 		this.qualifiedNameEdgeSchemaSet.add("userGroup_user");
 		this.qualifiedNameEdgeSchemaSet.add("user_board");
-		this.qualifiedNameEdgeSchemaSet.add("user_role");
+		this.qualifiedNameEdgeSchemaSet.add("user _role");
 		this.qualifiedNameEdgeSchemaSet.add("rootUserMeta");
 		this.qualifiedNameEdgeSchemaSet.add("root_User");
 		this.qualifiedNameEdgeSchemaSet.add("deletedVertexEdgeToRoot");

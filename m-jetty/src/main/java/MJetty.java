@@ -81,8 +81,7 @@ public class MJetty {
 
 
     private static void setUpStart() {
-        Inicialise.initializeCm();
-        NotificationGuru.start();
+        Inicialise.main();
         UMLG.get().commit();
     }
 

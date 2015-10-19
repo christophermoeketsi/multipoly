@@ -46,7 +46,7 @@ public class MMassanger implements Callable<MMassanger> {
             throw new IllegalStateException("BUG: the service should never be down!");
         }
         if (!EXECUTOR_SERVICE_GET.isTerminated()) {
-            return EXECUTOR_SERVICE_GET.submit(new MMassanger(notification,userFrom,userTo));
+            return EXECUTOR_SERVICE_GET.submit(new MMassanger(notification, userFrom, userTo));
         } else {
             return null;
         }
@@ -61,8 +61,8 @@ public class MMassanger implements Callable<MMassanger> {
                 case PERSONAL:
                     if (notifyInf != null) {
                         try {
-                            NotificationMessage notificationMessage = new NotificationMessage(new Date(), this.notification,userForm,userTo);
-                            notifyInf.sendMessage(notificationMessage.toJson(),userForm.getUsername());
+                            NotificationMessage notificationMessage = new NotificationMessage(new Date(), this.notification, userForm, userTo);
+                            notifyInf.sendMessage(notificationMessage.toJson(), userForm.getUsername());
                         } catch (Exception e) {
                             logger.error("Exception sending out notification", e);
                         }
@@ -72,8 +72,8 @@ public class MMassanger implements Callable<MMassanger> {
                 case ALL:
                     if (notifyInf != null) {
                         try {
-                            NotificationMessage notificationMessage = new NotificationMessage(new Date(), this.notification,userTo,userForm);
-                            notifyInf.sendMessage(notificationMessage.toJson(),userForm.getUsername());
+                            NotificationMessage notificationMessage = new NotificationMessage(new Date(), this.notification, userTo, userForm);
+                            notifyInf.sendMessage(notificationMessage.toJson(), userForm.getUsername());
                         } catch (Exception e) {
                             logger.error("Exception sending out notification", e);
                         }
@@ -83,8 +83,8 @@ public class MMassanger implements Callable<MMassanger> {
                 case BOARD:
                     if (notifyInf != null) {
                         try {
-                            NotificationMessage notificationMessage = new NotificationMessage(new Date(), this.notification, userForm, userForm.getBoard());
-                            notifyInf.sendMessage(notificationMessage.toJson(),userForm.getUsername());
+                            NotificationMessage notificationMessage = new NotificationMessage(new Date(), this.notification, userForm, (User) userForm.getBoard().toArray()[0]);
+                            notifyInf.sendMessage(notificationMessage.toJson(), userForm.getUsername());
                         } catch (Exception e) {
                             logger.error("Exception sending out notification", e);
                         }
@@ -98,7 +98,6 @@ public class MMassanger implements Callable<MMassanger> {
     }
 
 
-
     private Date calculateNewNotificationDate(Date nextNotificationDate, Integer minutesToAdd) {
         Calendar instance = Calendar.getInstance();
         instance.add(Calendar.MINUTE, minutesToAdd);
@@ -108,7 +107,7 @@ public class MMassanger implements Callable<MMassanger> {
     @Override
     public MMassanger call() throws Exception {
         try {
-            internalNotify( this.userForm,this.userTo);
+            internalNotify(this.userForm, this.userTo);
         } catch (RuntimeException e) {
             logger.error("MMassanger failure", e);
         } finally {

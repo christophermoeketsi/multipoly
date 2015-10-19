@@ -1,7 +1,6 @@
-package org.multipoly.restlet.module;
+package org.multipoly.restlet.app;
 
 
-import org.multipoly.restlet.app.MRestletApplication;
 import org.multipoly.security.MMemoryRealm;
 import org.restlet.Component;
 import org.restlet.data.Protocol;

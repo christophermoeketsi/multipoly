@@ -13,7 +13,7 @@ public abstract class BaseMApplication extends Application{
     public void setupRealm() {
         //Add all users and roles to the realm.
         this.realm = new MMemoryRealm(this);
-        this.realm.setName("CMRealm");
+        this.realm.setName("MRealm");
         getContext().setDefaultEnroler(this.realm.getEnroler());
         getContext().setDefaultVerifier(this.realm.getVerifier());
     }

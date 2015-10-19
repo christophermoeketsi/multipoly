@@ -12,7 +12,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="m-restlet-common" />
     <orderEntry type="library" name="Maven: org.restlet.jee:org.restlet.ext.servlet:2.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.restlet.jee:org.restlet:2.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.restlet.jse:org.restlet.ext.freemarker:2.2.2" level="project" />
@@ -123,14 +122,37 @@
     <orderEntry type="library" name="Maven: org.umlg:restlet:1.1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.umlg:sqlg-postgres:1.1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.postgresql:postgresql:9.4-1201-jdbc41" level="project" />
-    <orderEntry type="module" module-name="m-notification" />
-    <orderEntry type="module" module-name="m-common" />
     <orderEntry type="library" name="Maven: commons-net:commons-net:2.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-email:1.2" level="project" />
     <orderEntry type="library" name="Maven: javax.mail:mail:1.4.1" level="project" />
     <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
     <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-csv:1.0" level="project" />
-    <orderEntry type="module" module-name="m-entity" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../m-common" />
+          <root url="file://$MODULE_DIR$/../m-entity" />
+          <root url="file://$MODULE_DIR$/../m-generator" />
+          <root url="file://$MODULE_DIR$/../m-jetty" />
+          <root url="file://$MODULE_DIR$/../m-notification" />
+          <root url="file://$MODULE_DIR$" />
+          <root url="file://$MODULE_DIR$/../m-restlet-common" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../m-common/src/main/java" />
+          <root url="file://$MODULE_DIR$/../m-entity/src/main/generated-java" />
+          <root url="file://$MODULE_DIR$/../m-entity/src/main/generated-java-meta" />
+          <root url="file://$MODULE_DIR$/../m-entity/src/main/java" />
+          <root url="file://$MODULE_DIR$/../m-entity-restlet/src/main/generated-java-restlet" />
+          <root url="file://$MODULE_DIR$/../m-generator/src/main/java" />
+          <root url="file://$MODULE_DIR$/../m-jetty/src/main/java" />
+          <root url="file://$MODULE_DIR$/../m-notification/src/main/java" />
+          <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/../m-restlet-common/src/main/java" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

@@ -144,7 +144,7 @@ public class MMemoryRealm extends Realm {
         for (ROLE role : ROLE.values()) {
             unmap(user, getRole(role.name()));
         }
-        map(user, getRole(user.getUsertype().getQualifiedName()));
+        map(user, getRole(user.getRole().getQualifiedName()));
     }
 
     public void removeUser(User user) {
@@ -190,7 +190,7 @@ public class MMemoryRealm extends Realm {
             user.getSurname();
             user.getEmail();
             getUsers().add(user);
-            map(user, getRole(user.getUsertype().name()));
+            map(user, getRole(user.getRole().name()));
         }
     }
 

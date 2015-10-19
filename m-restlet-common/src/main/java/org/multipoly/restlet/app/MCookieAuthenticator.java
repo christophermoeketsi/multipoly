@@ -59,7 +59,7 @@ public class MCookieAuthenticator extends CookieAuthenticator {
                 ) {
             return CONTINUE;
         } else {
-            setLoginFormPath("/netcm/login");
+            setLoginFormPath("/m/login");
             setLoginPath("/logonPost");
             setLogoutPath("/logout");
             int result = super.beforeHandle(request, response);

@@ -1,10 +1,13 @@
 package org.multipoly.admin;
 
+import org.multipoly.Board.Block;
+import org.multipoly.Board.Board;
 import org.multipoly.User.ROLE;
 import org.multipoly.User.User;
 import org.multipoly.User.UserGroup;
 import org.umlg.runtime.adaptor.UMLG;
 import org.umlg.runtime.collection.UmlgSet;
+import org.umlg.runtime.collection.memory.UmlgMemorySet;
 
 /**
  * Created by chris on 2015/10/02.
@@ -30,7 +33,7 @@ public class Inicialise {
             adminGroup.setName("Admin");
         }
 
-        if (User.allInstances().select(u -> u.getName() == "admin").size() == 0) {
+        if (User.allInstances().size() == 0) {
             //admin
             User admin = new User();
             admin.setName("admin");
@@ -41,6 +44,20 @@ public class Inicialise {
             admin.setLastLoggedIn(1);
             admin.setLastLoggedOut(1);
             admin.addToRole(ROLE.ADMIN);
+
+            //This is to create the initial board things
+
+            Board board = new Board();
+            board.setName("Default Board");
+            UmlgMemorySet<User> users = new UmlgMemorySet<>();
+            users.add(admin);
+
+            Block  block  = new Block();
+            block.setColour("Brown");
+            block.setPosition("S:1");
+            block.setName("Soweto");
+            board.setUser(users);
+            board.addToBlock(block);
             adminGroup.addToUser(admin);
 
         }
@@ -51,6 +68,13 @@ public class Inicialise {
 
     public static void main() {
         createBaseData();
+    }
+
+
+    private UmlgSet<Block> createGameBlocks(){
+        UmlgMemorySet<Block> blocks  = new UmlgMemorySet<>();
+
+        return blocks;
     }
 
 }

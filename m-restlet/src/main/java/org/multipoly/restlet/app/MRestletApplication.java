@@ -83,18 +83,6 @@ public class MRestletApplication extends BaseMApplication {
 
         attachAllResources(router);
 
-       /* Reflections reflections = new Reflections("org.multipoly.restlet");
-        Set<Class<?>> typesAnnotatedWith = reflections.getTypesAnnotatedWith(Resource.class);*/
-
-        /*for (Class aClass : typesAnnotatedWith) {
-            Resource annotation = (Resource) aClass.getAnnotation(Resource.class);
-            Set<Method> authMethods = getAllMethods(aClass, withAnnotation(Auth.class));
-            FineGrainedAuth resourceAuth = new FineGrainedAuth(authMethods);
-            resourceAuth.setNext(aClass);
-            router.attach(annotation.value(), resourceAuth, Template.MODE_EQUALS);
-        }*/
-
-
         Filter freemarkerFilter = new FreemarkerFilter(getContext());
         freemarkerFilter.setNext(authenticator);
 
@@ -108,6 +96,7 @@ public class MRestletApplication extends BaseMApplication {
     }
 
     private void attachAllResources(Router router) {
+        attachToRouter(router, LoginFormServerResource.class, LoginFormServerResource.PATH);
         attachToRouter(router, LoginFormServerResource.class, LoginFormServerResource.PATH);
 
            }

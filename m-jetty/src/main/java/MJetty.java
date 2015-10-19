@@ -12,6 +12,8 @@ import org.slf4j.LoggerFactory;
 import org.umlg.runtime.adaptor.UMLG;
 
 import java.io.File;
+import java.net.URL;
+import java.net.URLClassLoader;
 
 /**
  * Created by chris on 2015/09/23.
@@ -19,13 +21,14 @@ import java.io.File;
 public class MJetty {
 
     private static Logger logger = LoggerFactory.getLogger(MJetty.class);
+
     static {
         Runtime.getRuntime().addShutdownHook(new MJetty.ShutdownHook());
     }
 
 
     public static void main(String[] args) throws Exception {
-
+        showClassesInCLASSPATH();
         MUtil.setJettySystemProperties();
         File log4jPropertiesFile = new File("./m-common/src/assembly/properties/log4j.properties");
         if (!log4jPropertiesFile.exists()) {
@@ -33,16 +36,13 @@ public class MJetty {
         }
         logger.info(String.format("loading log4j.properties from %s", log4jPropertiesFile.getAbsolutePath()));
         System.setProperty("log4j.configuration", "file:" + log4jPropertiesFile.getAbsolutePath());
-        System.setProperty("org.restlet.engine.loggerFacadeClass", "org.restlet.ext.slf4j.Slf4jLoggerFacade");
+        //System.setProperty("org.restlet.engine.loggerFacadeClass", "org.restlet.ext.slf4j.Slf4jLoggerFacade");
 
         Server server = new Server(MProperties.INSTANCE.getCmJettyPort());
 
         // Setup HTTP Configuration
         HttpConfiguration httpConf = new HttpConfiguration();
         httpConf.setSecurePort(MProperties.INSTANCE.getCmJettyPort());
-        /*httpConf.setSecureScheme("https");
-        httpConf.addCustomizer(new SecureRequestCustomizer());
-*/
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
         server.setHandler(context);
@@ -50,7 +50,7 @@ public class MJetty {
         // Restlet servlet
         ServletHolder servletHolder = new ServletHolder(new ServerServlet());
         servletHolder.setName("MultipolyApplication");
-        servletHolder.setInitParameter("org.restlet.application", "Multipoly CmApplication");
+        servletHolder.setInitParameter("org.restlet.application", "org.multipoly.restlet.app.MRestletApplication");
         servletHolder.setInitParameter("org.restlet.clients", "HTTP FILE CLAP");
         context.addServlet(servletHolder, "/m/*");
 
@@ -60,22 +60,16 @@ public class MJetty {
         context.addServlet(websocketServletHolder, "/m/broadcastWebsocket");
 
         ContextHandlerCollection contextHandlers = new ContextHandlerCollection();
-        contextHandlers.setHandlers(new Handler[] {context});
+        contextHandlers.setHandlers(new Handler[]{context});
 
-        ServerConnector serverConnector = new ServerConnector(server,new HttpConnectionFactory(httpConf)); // <-- use it!
+        ServerConnector serverConnector = new ServerConnector(server, new HttpConnectionFactory(httpConf)); // <-- use it!
         serverConnector.setPort(MProperties.INSTANCE.getCmJettyPort());
 
         server.setConnectors(new Connector[]
                 {serverConnector});
         server.setHandler(contextHandlers);
-
         setUpStart();
         server.start();
-        //Jippo to get restlet application to start up.
-        //It is needed for websocket authentication to work
-
-       // SslClient.INSTANCE.get(server.getURI() + "netcm");
-
         server.join();
     }
 
@@ -86,7 +80,7 @@ public class MJetty {
     }
 
 
-        static class ShutdownHook extends Thread {
+    static class ShutdownHook extends Thread {
         public ShutdownHook() {
             super();
         }
@@ -94,6 +88,18 @@ public class MJetty {
         public void run() {
             logger.debug("Shutting down notification guru");
             // NotificationGuru.shutdown();
+        }
+    }
+
+    private static void showClassesInCLASSPATH(){
+        //This is the show the classes that are in the class path
+
+        ClassLoader cl = ClassLoader.getSystemClassLoader();
+
+        URL[] urls = ((URLClassLoader)cl).getURLs();
+
+        for(URL url: urls){
+            System.out.println(url.getFile());
         }
     }
 }

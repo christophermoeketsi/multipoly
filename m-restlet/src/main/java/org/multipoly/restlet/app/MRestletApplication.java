@@ -55,13 +55,14 @@ public class MRestletApplication extends BaseMApplication {
         lib.setListingAllowed(true);
         router.attach("/lib/", lib);
 
+        Directory img = new Directory(getContext(), "file:///" + current.getAbsolutePath() + "/m-web/src/main/resources/img");
+        img.setListingAllowed(true);
+        router.attach("/img/",img);
+
         Directory css = new Directory(getContext(), "file:///" + current.getAbsolutePath() + "/m-web/src/main/resources/css");
         css.setListingAllowed(true);
         router.attach("/css/", css);
 
-        Directory img = new Directory(getContext(), "file:///" + current.getAbsolutePath() + "/m-web/src/main/resources/img");
-        img.setListingAllowed(true);
-        router.attach("/img/", img);
 
         Directory audio = new Directory(getContext(), "file:///" + current.getAbsolutePath() + "/m-web/src/main/resources/audio");
         audio.setListingAllowed(true);
@@ -96,10 +97,9 @@ public class MRestletApplication extends BaseMApplication {
     }
 
     private void attachAllResources(Router router) {
-        attachToRouter(router, LoginFormServerResource.class, LoginFormServerResource.PATH);
-        attachToRouter(router, LoginFormServerResource.class, LoginFormServerResource.PATH);
-
-           }
+        /*attachToRouter(router, LoginFormServerResource.class, LoginFormServerResource.PATH);*/
+        router.attach(LoginFormServerResource.PATH,LoginFormServerResource.class);
+    }
 
     private void attachToRouter(Router router, Class<? extends ServerResource> clazz, String path) {
         /*Set<Method> authMethods = getAllMethods(clazz, withAnnotation(Auth.class));

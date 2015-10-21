@@ -1,6 +1,5 @@
 package org.multipoly.restlet.modules.login;
 
-import org.apache.commons.lang.StringUtils;
 import org.multipoly.restlet.app.BaseServerResource;
 import org.multipoly.restlet.app.MFreemarker;
 import org.restlet.data.MediaType;
@@ -18,7 +17,7 @@ import java.util.Map;
  */
 public class LoginFormServerResource extends BaseServerResource {
 
-    public final static String PATH = "/logonPost";
+    public final static String PATH = "/login";
 
     public LoginFormServerResource() {
         setNegotiated(false);
@@ -27,19 +26,20 @@ public class LoginFormServerResource extends BaseServerResource {
     @Override
     protected Representation get() throws ResourceException {
         Map<String, Object> dataModel = new HashMap<>();
+        /*Map<String, Object> dataModel = new HashMap<>();
         String redirectUri = getQueryValue("redirectUri");
         if (StringUtils.isEmpty(redirectUri)) {
             redirectUri = "/m";
         }
         dataModel.put("redirectUri", redirectUri);
-        new MFreemarker();
-        return new TemplateRepresentation("modules/login/login.ftl", MFreemarker.getConfiguration(), dataModel, MediaType.TEXT_HTML);
+        new MFreemarker();*/
+        return new TemplateRepresentation("/login.html", MFreemarker.getConfiguration(), dataModel, MediaType.TEXT_HTML);
     }
 
     @Override
     protected Representation post(Representation entity) {
         String redirectUri = getQueryValue("redirectUri");
-        if (redirectUri==null)
+        if (redirectUri == null)
             redirectUri = "/m";
         return new JsonRepresentation("{\"status\":\"success\", \"redirect\":\"" + redirectUri + "\"}");
     }

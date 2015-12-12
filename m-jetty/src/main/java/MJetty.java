@@ -5,7 +5,6 @@ import org.eclipse.jetty.servlet.ServletHolder;
 import org.multipoly.admin.Inicialise;
 import org.multipoly.commonutilties.MProperties;
 import org.multipoly.commonutilties.MUtil;
-import org.multipoly.websocket.NotificationWebsocketServlet;
 import org.restlet.ext.servlet.ServerServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,7 +35,6 @@ public class MJetty {
         }
         logger.info(String.format("loading log4j.properties from %s", log4jPropertiesFile.getAbsolutePath()));
         System.setProperty("log4j.configuration", "file:" + log4jPropertiesFile.getAbsolutePath());
-        //System.setProperty("org.restlet.engine.loggerFacadeClass", "org.restlet.ext.slf4j.Slf4jLoggerFacade");
 
         Server server = new Server(MProperties.INSTANCE.getCmJettyPort());
 
@@ -55,9 +53,11 @@ public class MJetty {
         context.addServlet(servletHolder, "/m/*");
 
         // Websocket servletpieter
-        ServletHolder websocketServletHolder = new ServletHolder(new NotificationWebsocketServlet());
+
+        //I should come back to this
+/*        ServletHolder websocketServletHolder = new ServletHolder(new NotificationWebsocketServlet());
         websocketServletHolder.setName("Umlg WebSocket Servlet");
-        context.addServlet(websocketServletHolder, "/m/broadcastWebsocket");
+        context.addServlet(websocketServletHolder, "/m/broadcastWebsocket");*/
 
         ContextHandlerCollection contextHandlers = new ContextHandlerCollection();
         contextHandlers.setHandlers(new Handler[]{context});
@@ -93,11 +93,8 @@ public class MJetty {
 
     private static void showClassesInCLASSPATH(){
         //This is the show the classes that are in the class path
-
         ClassLoader cl = ClassLoader.getSystemClassLoader();
-
         URL[] urls = ((URLClassLoader)cl).getURLs();
-
         for(URL url: urls){
             System.out.println(url.getFile());
         }

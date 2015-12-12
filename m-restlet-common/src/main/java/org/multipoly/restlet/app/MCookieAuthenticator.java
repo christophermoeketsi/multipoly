@@ -55,7 +55,8 @@ public class MCookieAuthenticator extends CookieAuthenticator {
                 request.getResourceRef().getRemainingPart().startsWith("/js") ||
                 request.getResourceRef().getRemainingPart().startsWith("/login") ||
                 request.getResourceRef().getRemainingPart().startsWith("/modules/login") ||
-                request.getResourceRef().getRemainingPart().startsWith("/js")
+                request.getResourceRef().getRemainingPart().startsWith("/js")||
+                request.getResourceRef().getRemainingPart().startsWith("/register")
                 ) {
             return CONTINUE;
         } else {
@@ -108,7 +109,6 @@ public class MCookieAuthenticator extends CookieAuthenticator {
             Cookie credentialsCookie = request.getCookies().getFirst(getCookieName());
             request.getCookies().remove(credentialsCookie);
         }
-        //The CmSessionInfo instance is created in CMVerifier.verify
         if (super.authenticate(request, response)) {
             if (isLoggingIn(request, response)) {
                 captureLoginDetails();

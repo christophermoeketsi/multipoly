@@ -26,13 +26,6 @@ public class LoginFormServerResource extends BaseServerResource {
     @Override
     protected Representation get() throws ResourceException {
         Map<String, Object> dataModel = new HashMap<>();
-        /*Map<String, Object> dataModel = new HashMap<>();
-        String redirectUri = getQueryValue("redirectUri");
-        if (StringUtils.isEmpty(redirectUri)) {
-            redirectUri = "/m";
-        }
-        dataModel.put("redirectUri", redirectUri);
-        new MFreemarker();*/
         return new TemplateRepresentation("/login.html", MFreemarker.getConfiguration(), dataModel, MediaType.TEXT_HTML);
     }
 

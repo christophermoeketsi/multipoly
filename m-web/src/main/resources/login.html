@@ -29,20 +29,76 @@
     <script src="js/jquery/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script>
+
+        //These are the global var
+        var loginVar = true;
         function notRegistered() {
             $('.login').hide();
             $('.register').show();
+            loginVar = false;
         }
 
         function login() {
+            loginVar = true;
             $('.login').show();
             $('.register').hide();
+        }
+
+        function getCredentials (){
+            //Gets the user's credentials
+            var jsonCreds  ={};
+            jsonCreds.email = $("#inputEmail3").val()
+            jsonCreds.password = $("#inputPassword3").val();
+            return jsonCreds;
+         }
+
+
+        function getLoginCredentials (){
+            //Gets the user's credentials
+            var jsonCreds  ={};
+            jsonCreds.username = $("#inputEmail3").val()
+            jsonCreds.password = $("#inputPassword3").val();
+            return jsonCreds;
+        }
+
+        function goToDashboard(){
+        }
+
+        function submitMe() {
+            if (loginVar) {
+                var creds = getLoginCredentials();
+                $.ajax({
+                    type: "POST",
+                    url: "logonPost",
+                    contentType: "application/json",
+                    data: JSON.stringify(creds),
+                    success: function (responce) {
+                        window.location.replace(responce.redirect);
+                    },
+                    error: function () {
+                        alert("ajax error");
+                    },
+                    dataType: 'json'
+                });
+            } else {
+                var creds = getCredentials();
+                $.ajax({
+                    type: "POST",
+                    url: "register",
+                    contentType: "application/json",
+                    data: JSON.stringify(creds),
+                    success: function (e) {
+                    },
+                    error: function () {
+                        alert("ajax error");
+                    },
+                    dataType: 'json'
+                });
+            };
         }
     </script>
 
     <script type="text/javascript">
-        window.alert = function () {
-        };
         var defaultCSS = document.getElementById('bootstrap-css');
         function changeCSS(css) {
             if (css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="' + css + '" type="text/css" />');
@@ -63,9 +119,9 @@
                     <span class="glyphicon glyphicon-lock"></span> Login
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form">
+                    <form action="javascript:submitMe()" class="form-horizontal" role="form">
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-3 control-label">
+                            <label  id = "emailField" for="inputEmail3" class="col-sm-3 control-label">
                                 Email</label>
 
                             <div class="col-sm-9">
@@ -82,6 +138,7 @@
                                        required="">
                             </div>
                         </div>
+
                         <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-9">
                                 <div class="checkbox">
@@ -97,17 +154,16 @@
                                 <button type="submit" class="login btn btn-success btn-sm">
                                     Sign in
                                 </button>
-                                <button type="reset" class="login btn btn-default btn-sm">
+                                <button type="submit" type="reset" class="login btn btn-default btn-sm">
                                     Reset
                                 </button>
-                                <button type="submit" class=" register btn btn-success btn-sm">
+                                <button class="register btn btn-success btn-sm">
                                     Create Account
                                 </button>
                             </div>
                         </div>
                     </form>
                 </div>
-
 
                 <div class="panel-footer login">
                     Not Registred? <a id="notRegistered" onclick="notRegistered()">Register here</a>

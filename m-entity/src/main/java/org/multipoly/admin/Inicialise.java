@@ -15,7 +15,7 @@ import org.umlg.runtime.collection.memory.UmlgMemorySet;
 public class Inicialise {
 
 
-    public static void createBaseData() {
+    public static void  createBaseData() {
         captureUserGroupsAndUsers();
     }
 
@@ -31,6 +31,8 @@ public class Inicialise {
         if (userGroups.isEmpty()) {
             adminGroup = new UserGroup();
             adminGroup.setName("Admin");
+            adminGroup = new UserGroup();
+            adminGroup.setName("Players");
         }
 
         if (User.allInstances().size() == 0) {
@@ -61,20 +63,25 @@ public class Inicialise {
             adminGroup.addToUser(admin);
 
         }
-
         UMLG.get().commit();
     }
 
 
     public static void main() {
-        createBaseData();
+        /*createBaseData();*/
+        createPlayersUserGroup();
     }
 
 
     private UmlgSet<Block> createGameBlocks(){
         UmlgMemorySet<Block> blocks  = new UmlgMemorySet<>();
-
         return blocks;
+    }
+
+    static private void createPlayersUserGroup  () {
+        UserGroup adminGroup = new UserGroup();
+        adminGroup.setName("Players");
+        UMLG.get().commit();
     }
 
 }

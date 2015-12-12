@@ -3,12 +3,8 @@ package org.multipoly.security;
 import org.multipoly.User.User;
 import org.restlet.engine.util.Base64;
 import org.restlet.ext.crypto.internal.CryptoUtils;
-import org.umlg.runtime.types.Password;
-import org.umlg.runtime.util.PasswordEncryptionService;
 
 import java.security.GeneralSecurityException;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 
 /**
  * Date: 2014/11/06
@@ -49,15 +45,19 @@ public class SecurityUtil {
     }
 
     public static boolean verify(User user, char[] secret) {
-        Password password = new Password(user.getPassword());
+        //Password password = new Password(user.getPassword());
+
         try {
-            return new PasswordEncryptionService().authenticate(
+            //Todo Encrypt the password later - lets keep it simple for now
+            String secretString = String.valueOf(secret);
+            return secretString.equals(user.getPassword());
+            /*return new PasswordEncryptionService().authenticate(
                     new String(secret),
                     password.getEncryptedPassword(),
-                    password.getSalt());
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        } catch (InvalidKeySpecException e) {
+                    password.getSalt());*/
+        /*} catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);*/
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }

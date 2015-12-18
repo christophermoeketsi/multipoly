@@ -2,7 +2,10 @@ package org.multipoly.restlet.app;
 
 import org.multipoly.User.ROLE;
 import org.multipoly.restlet.BaseMApplication;
+import org.multipoly.restlet.modules.LandingPageServerResource;
 import org.multipoly.restlet.modules.dashboard.DashboardServerResource;
+import org.multipoly.restlet.modules.dashboard.DashboardViewServerResource;
+import org.multipoly.restlet.modules.game.GameServerResource;
 import org.multipoly.restlet.modules.login.LoginFormServerResource;
 import org.multipoly.restlet.modules.login.LogonServerResource;
 import org.multipoly.restlet.modules.register.RegisterFormServerResource;
@@ -48,8 +51,6 @@ public class MRestletApplication extends BaseMApplication {
     @Override
     public Restlet createInboundRoot() {
         this.setupRealm();
-
-
         //work out the directory from which to server the files.
         //bin is for the distribution
         File current = new File(".");
@@ -118,5 +119,9 @@ public class MRestletApplication extends BaseMApplication {
 
     private void attachAuthenticatedResources(Router router) {
         router.attach(DashboardServerResource.PATH, DashboardServerResource.class);
+        router.attach(LandingPageServerResource.PATH,LandingPageServerResource.class);
+        /*This is for the ng views*/
+        router.attach(DashboardViewServerResource.PATH, DashboardViewServerResource.class);
+        router.attach(GameServerResource.PATH, GameServerResource.class);
     }
 }

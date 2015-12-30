@@ -20,7 +20,7 @@ public class GameServerResource extends BaseServerResource {
     @Override
     protected Representation get() throws ResourceException {
         try {
-            return new TemplateRepresentation("/pages/gameView.html", MFreemarker.getConfiguration(), MediaType.TEXT_HTML);
+            return new TemplateRepresentation("/pages/gameViewBase.html", MFreemarker.getConfiguration(), MediaType.TEXT_HTML);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -29,7 +29,7 @@ public class GameServerResource extends BaseServerResource {
     @Override
     protected Representation post(Representation entity) {
         try {
-            return new TemplateRepresentation("/pages/gameView.html", MFreemarker.getConfiguration(), MediaType.TEXT_HTML);
+            return new TemplateRepresentation("/pages/gameViewBase.html", MFreemarker.getConfiguration(), MediaType.TEXT_HTML);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

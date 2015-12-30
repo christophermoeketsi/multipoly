@@ -89,6 +89,10 @@ public class MRestletApplication extends BaseMApplication {
         ftlLayout.setListingAllowed(true);
         router.attach("/layout/", ftlLayout);
 
+        Directory directives = new Directory(getContext(), "file:///" + current.getAbsolutePath() + "/m-web/src/main/resources/directives");
+        ftlLayout.setListingAllowed(true);
+        router.attach("/directives/", directives);
+
         attachAllSafeResources(router);
 
         MCookieAuthenticator authenticator = MCookieAuthenticator.get(getContext(), "MRealm", /*must be 16 bytes*/"My Server KeyXXX".getBytes());

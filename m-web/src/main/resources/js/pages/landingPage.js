@@ -71,3 +71,18 @@ main.directive('score', function () {
         }
     };
 });
+
+
+main.directive('ranking', function () {
+    return {
+        restrict: 'AE',
+        replace: 'true',
+        templateUrl: 'directives/rankingDirective.html',
+        scope: {
+            rank: '@',
+            rankingStars :'@'
+        },
+        link: function (scope, elem, attrs) {
+        }
+    };
+});

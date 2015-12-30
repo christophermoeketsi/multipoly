@@ -62,9 +62,6 @@ td {
     margin-left: 10px;
 }
 
-
-
-
 #board {
     flex: 10;
     /*display: none;*/
@@ -830,7 +827,6 @@ html, body, .ng-scope {
 
 }
 
-
 /*This is the leftDirective*/
 .landWrapper {
     display: flex;
@@ -856,91 +852,118 @@ html, body, .ng-scope {
     /* flex-wrap: wrap;*/
 }
 
-
 /*This is where the score line stuff is */
 
-.scoreline  {
+.scoreline {
     display: flex;
     flex-direction: column;
-    flex:4;
-
+    flex: 4;
+    background-image: url('/m/img/game/finalBanner.png');
+    background-repeat: no-repeat;
+   /* background-attachment: fixed;*/
+    background-position: 80% 100%;
 }
 
-
-.scoreline >.top  {
+.scoreline > .top {
+    padding-top: 100px;
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     flex-flow: row;
-    flex:2;
-        min-height: 100px;
+    flex: 2;
+    min-height: 200px;
 }
 
-
-.scoreline >.top > .topScoreColumn  {
-    flex:1;
-   /* background-color: #3f903f;*/
+.scoreline > .top > .topScoreColumn {
+    flex: 1;
+    /* background-color: #3f903f;*/
     display: flex;
     flex-direction: column;
+    background-image: url('/m/img/game/moneyBack.png');
+    background-repeat: no-repeat;
+    /* background-attachment: fixed;*/
+    background-position: 50% 100%;
 }
 
-
-.scoreline >.top > .topScoreColumn >.amountContainer {
-    flex:1;
+.scoreline > .top > .topScoreColumn > .amountContainer {
+    flex: 1;
     /* background-color: #3f903f;*/
     display: flex;
     flex-direction: row;
 }
 
-.amountContainer>.amount{
-    color: #d7b35d;
+.amountContainer > .amount {
+    color: #fba90a;
     font-family: Audiowide;
-    flex:1;
+    flex: 1;
     text-align: center;
     font-size: 22px;
+    /*background-image: url('/m/img/game/moneyBack.png');
+    background-repeat: no-repeat;
+    /!* background-attachment: fixed;*!/
+    background-position: 90% 100%;*/
 }
-
 
 .titleContainer {
     display: flex;
     flex-direction: row;
-    flex:2;
+    flex: 2;
 }
 
-
-.titleContainer >.amountTitle{
+.titleContainer > .amountTitle {
     font-size: 30px;
-    color: #d7b35d;
+    color: #b9351e;
     font-family: Audiowide;
     text-align: left;
 }
 
-.titleContainer>.coinstack{
-    display: block;
-    flex:2;
-    background:url(/m/img/game/Coin-icon.png);
+
+.scoreline > .bottom {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+    /* background-color: #269abc;*/
+    flex: 2;
+}
+
+.scoreline > .bottom > .bottomScoreColumn {
+    flex: 1;
+}
+
+/*This is for the ranking container*/
+
+.bottomScoreColumn > .rankingContainer {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.rankingContainer > .rankValue {
+    flex: 1;
+    height: 60px;
+}
+
+.rankingContainer > .rankingStarsContainer {
+    flex: 5;
+    display: flex;
+    flex-direction: row;
+}
+
+.rankingStarsContainer > li {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    height: 60px;
+}
+
+.star {
+    background: url(/m/img/game/Star-icon.png);
     width: auto; /*or your image's width*/
     height: auto; /*or your image's height*/
     margin: 0;
     padding: 0;
     background-repeat: no-repeat;
-
-}
-
-
-
-.scoreline >.bottom  {
-    display: flex;
-    flex-direction:row;
-    flex-flow: row;
-   /* background-color: #269abc;*/
-    flex:2;
-}
-
-
-
-.scoreline >.bottom > .bottomScoreColumn  {
     flex: 1;
-    /*background-color: #269abc;*/
+
 }
 
 @font-face {
@@ -949,3 +972,6 @@ html, body, .ng-scope {
     font-weight: 400;
     src: local('Audiowide'), local('Audiowide-Regular'), url(http://themes.googleusercontent.com/static/fonts/audiowide/v2/8XtYtNKEyyZh481XVWfVOj8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
 }
+
+
+

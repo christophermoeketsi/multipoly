@@ -21,81 +21,209 @@
         <div class="bottomScoreColumn"> Total Ranking</div>
     </div>
 </div>
-<table id="board">
-    <tr>
-        <td class="cell board-corner" id="cell20"></td>
-        <td class="cell board-top" id="cell21"></td>
-        <td class="cell board-top" id="cell22"></td>
-        <td class="cell board-top" id="cell23"></td>
-        <td class="cell board-top" id="cell24"></td>
-        <td class="cell board-top" id="cell25"></td>
-        <td class="cell board-top" id="cell26"></td>
-        <td class="cell board-top" id="cell27"></td>
-        <td class="cell board-top" id="cell28"></td>
-        <td class="cell board-top" id="cell29"></td>
-        <td class="cell board-corner" id="cell30"></td>
-    </tr>
-    <tr>
-        <td class="cell board-left" id="cell19"></td>
-        <td colspan="9" class="board-center"></td>
-        <td class="cell board-right" id="cell31"></td>
-    </tr>
-    <tr>
-        <td class="cell board-left" id="cell18">
-            <left-land-directive>
-            </left-land-directive>
-        </td>
-        <td colspan="9" class="board-center"></td>
-        <td class="cell board-right" id="cell32"></td>
-    </tr>
-    <tr>
-        <td class="cell board-left" id="cell17"></td>
-        <td colspan="9" class="board-center"></td>
-        <td class="cell board-right" id="cell33"></td>
-    </tr>
-    <tr>
-        <td class="cell board-left" id="cell16"></td>
-        <td colspan="9" class="board-center"></td>
-        <td class="cell board-right" id="cell34"></td>
-    </tr>
-    <tr>
-        <td class="cell board-left" id="cell15"></td>
-        <td colspan="9" class="board-center"></td>
-        <td class="cell board-right" id="cell35"></td>
-    </tr>
-    <tr>
-        <td class="cell board-left" id="cell14"></td>
-        <td colspan="9" class="board-center"></td>
-        <td class="cell board-right" id="cell36"></td>
-    </tr>
-    <tr>
-        <td class="cell board-left" id="cell13"></td>
-        <td colspan="9" class="board-center"></td>
-        <td class="cell board-right" id="cell37"></td>
-    </tr>
-    <tr>
-        <td class="cell board-left" id="cell12"></td>
-        <td colspan="9" class="board-center"></td>
-        <td class="cell board-right" id="cell38"></td>
-    </tr>
-    <tr>
-        <td class="cell board-left" id="cell11"></td>
-        <td colspan="9" class="board-center">
-            <div id="jail"></div>
-        </td>
-        <td class="cell board-right" id="cell39"></td>
-    </tr>
-    <tr>
-        <td class="cell board-corner" id="cell10"></td>
-        <td class="cell board-bottom" id="cell9"></td>
-        <td class="cell board-bottom" id="cell8"></td>
-        <td class="cell board-bottom" id="cell7"></td>
-        <td class="cell board-bottom" id="cell6"></td>
-        <td class="cell board-bottom" id="cell5"></td>
-        <td class="cell board-bottom" id="cell4"></td>
-        <td class="cell board-bottom" id="cell3"></td>
-        <td class="cell board-bottom" id="cell2"></td>
-        <td class="cell board-bottom" id="cell1"></td>
-        <td class="cell board-corner" id="cell0"></td>
-    </tr>
-</table>
+
+<div class="viewport">
+    <div class="world">
+        <div class="ground">
+
+            <table id="board">
+                <tr>
+                    <td class="cell board-corner" id="cell20">
+                        <conner css-class="parking"></conner>
+                    </td>
+                    <td class="cell board-top" id="cell21">
+                        <north-land-directive street-name="Far Street" css-class="red" price="700 Coons"
+                                              number-of-layers="3"></north-land-directive>
+                    </td>
+                    <td class="cell board-top" id="cell22">
+                        <chance css-class="chanceNorth"></chance>
+                    </td>
+                    <td class="cell board-top" id="cell23">
+                        <north-land-directive street-name="Shimi Street" css-class="red" price="5000 Coons"
+                                              number-of-layers="3"></north-land-directive>
+                    </td>
+                    <td class="cell board-top" id="cell24">
+                        <north-land-directive street-name="Shimi Street" css-class="red" price="5000 Coons"
+                                              number-of-layers="3"></north-land-directive>
+                    </td>
+                    <td class="cell board-top" id="cell25">
+                        <plain-directive price="3300 Coons" css-class="trainnorth"></plain-directive>
+                    </td>
+                    <td class="cell board-top" id="cell26">
+                        <north-land-directive street-name="Far Street" css-class="yellow" price="700 Coons"
+                                              number-of-layers="3"></north-land-directive>
+                    </td>
+                    <td class="cell board-top" id="cell27">
+                        <north-land-directive street-name="Far Street" css-class="yellow" price="700 Coons"
+                                              number-of-layers="3"></north-land-directive>
+                    </td>
+                    <td class="cell board-top" id="cell28">
+                        <plain-directive price="300 Coons" css-class="water"></plain-directive>
+                    </td>
+                    <td class="cell board-top" id="cell29">
+                        <north-land-directive street-name="Far Street" css-class="yellow" price="700 Coons"
+                                              number-of-layers="3"></north-land-directive>
+                    </td>
+                    <td class="cell board-corner gotojail" id="cell30"></td>
+                </tr>
+                <tr>
+                    <td class="cell board-left" id="cell19">
+                        <left-land-directive number-of-layers="2" price="3400 Coons" css-class="orangeback"
+                                             street-name="Chris Road">
+                        </left-land-directive>
+                    </td>
+                    <td colspan="9" class="board-center"></td>
+                    <td class="cell board-right" id="cell31">
+                        <right-land-directive number-of-layers="2" price="7200 Coons" css-class="green"
+                                              street-name="Chris Road">
+                        </right-land-directive>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cell board-left" id="cell18">
+                        <left-land-directive number-of-layers="2" price="3400 Coons" css-class="orangeback"
+                                             street-name="Chris Road">
+                        </left-land-directive>
+                    </td>
+                    <td colspan="9" class="board-center"></td>
+                    <td class="cell board-right" id="cell32">
+                        <right-land-directive number-of-layers="2" price="7200 Coons" css-class="green"
+                                              street-name="Chris Road">
+                        </right-land-directive>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cell board-left" id="cell17">
+                        <left-plain number-of-layers="2" price="Chest" css-class="leftChest"
+                                    street-name="Community"></left-plain>
+                    </td>
+                    <td colspan="9" class="board-center">
+                        <dice></dice>
+
+                    </td>
+                    <td class="cell board-right" id="cell33">
+                        <right-plain number-of-layers="2" price="Chest" css-class="leftChest"
+                                     street-name="Community"></right-plain>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cell board-left" id="cell16">
+                        <left-land-directive number-of-layers="2" price="3400 Coons" css-class="orangeback"
+                                             street-name="Chris Road">
+                        </left-land-directive>
+                    </td>
+                    <td colspan="9" class="board-center"></td>
+                    <td class="cell board-right" id="cell34">
+                        <right-land-directive number-of-layers="2" price="7200 Coons" css-class="green"
+                                              street-name="Chris Road">
+                        </right-land-directive>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cell board-left" id="cell15">
+                        <left-plain number-of-layers="2" price="20500 Coons" css-class="lefttrain"
+                                    street-name="Train Station"></left-plain>
+                    </td>
+                    <td colspan="9" class="board-center"></td>
+                    <td class="cell board-right" id="cell35">
+                        <right-plain number-of-layers="2" price="3000 Coons" css-class="rightTrain"
+                                     street-name="Train"></right-plain>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cell board-left" id="cell14">
+                        <left-land-directive number-of-layers="2" price="3400 Coons" css-class="purpleback"
+                                             street-name="Chris Road">
+                        </left-land-directive>
+                    </td>
+                    <td colspan="9" class="board-center"></td>
+                    <td class="cell board-right" id="cell36">
+                        <right-simple display-text="Chance" css-class="rightChance"></right-simple>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cell board-left" id="cell13">
+                        <left-land-directive number-of-layers="2" price="3000 Coons" css-class="purpleback"
+                                             street-name="Chris Road">
+                        </left-land-directive>
+                    </td>
+                    <td colspan="9" class="board-center"></td>
+                    <td class="cell board-right" id="cell37">
+                        <right-land-directive number-of-layers="2" price="7200 Coons" css-class="blue"
+                                              street-name="Chris Road">
+                        </right-land-directive>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cell board-left" id="cell12">
+                        <left-plain number-of-layers="2" price="32500 Coons" css-class="electric"
+                                    street-name="Elec Company"></left-plain>
+                    </td>
+                    <td colspan="9" class="board-center"></td>
+                    <td class="cell board-right" id="cell38">
+                        <right-simple display-text="Lux Tax" css-class="ring"></right-simple>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cell board-left" id="cell11">
+                        <left-land-directive number-of-layers="2" price="2500 Coons" css-class="purpleback"
+                                             street-name="Chris Road">
+                        </left-land-directive>
+                    </td>
+                    <td colspan="9" class="board-center">
+                        <div id="jail"></div>
+
+
+                    </td>
+                    <td class="cell board-right" id="cell39">
+                        <right-land-directive number-of-layers="2" price="7200 Coons" css-class="blue"
+                                              street-name="Chris Road">
+                        </right-land-directive>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cell board-corner jail" id="cell10"></td>
+                    <td class="cell board-bottom" id="cell9">
+                        <south-land-directive street-name="Third Street" css-class="lightblue" price="250"
+                                              number-of-layers="3"></south-land-directive>
+                    </td>
+                    <td class="cell board-bottom" id="cell8">
+                        <south-land-directive street-name="Third Street" css-class="lightblue" price="250"
+                                              number-of-layers="3"></south-land-directive>
+                    </td>
+                    <td class="cell board-bottom" id="cell7">
+                        <chance css-class="chance"></chance>
+                    </td>
+                    <td class="cell board-bottom" id="cell6">
+                        <south-land-directive street-name="Third Street" css-class="lightblue" price="250"
+                                              number-of-layers="3"></south-land-directive>
+                    </td>
+                    </td>
+                    <td class="cell board-bottom" id="cell5">
+                        <plain-directive price="300 Coons" css-class="trainsouth"></plain-directive>
+                    </td>
+                    <td class="cell board-bottom" id="cell4">
+                        <income-tax-directive price="200 Coons" css-class="incomeTax"></income-tax-directive>
+                    </td>
+                    <td class="cell board-bottom" id="cell3">
+                        <south-land-directive street-name="Third Street" css-class="brown" price="250"
+                                              number-of-layers="3"></south-land-directive>
+                    </td>
+                    <td class="cell board-bottom chest" id="cell2"></td>
+                    <td class="cell board-bottom" id="cell1">
+                        <south-land-directive street-name="First Street" css-class="brown" price="200"
+                                              number-of-layers="3"></south-land-directive>
+                    </td>
+                    <td class="cell board-corner go" id="cell0"></td>
+                </tr>
+            </table>
+
+
+        </div>
+
+        <chip-directive css-class="orangeChip" chip-id="1"></chip-directive>
+    </div>
+</div>
+
+<script type='text/javascript' src='js/wheel/winwheel_1.2.js'></script>

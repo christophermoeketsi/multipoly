@@ -159,12 +159,18 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+
     </dependencies>
 
 
 
     <properties>
-        <umlg.version>1.1.0-SNAPSHOT</umlg.version>
+        <umlg.version>1.0.2</umlg.version>
         <jetty.version>9.3.3.v20150827</jetty.version>
     </properties>
 

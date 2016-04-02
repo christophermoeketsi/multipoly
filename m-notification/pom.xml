@@ -11,7 +11,6 @@
 
     <artifactId>m-notification</artifactId>
 
-
     <build>
         <plugins>
 

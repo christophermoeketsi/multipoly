@@ -5,6 +5,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
 import org.multipoly.admin.Inicialise;
 import org.multipoly.commonutilties.MProperties;
 import org.multipoly.commonutilties.MUtil;
+import org.multipoly.restlet.app.MRestletApplication;
 import org.restlet.ext.servlet.ServerServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,7 +49,7 @@ public class MJetty {
         // Restlet servlet
         ServletHolder servletHolder = new ServletHolder(new ServerServlet());
         servletHolder.setName("MultipolyApplication");
-        servletHolder.setInitParameter("org.restlet.application", "org.multipoly.restlet.app.MRestletApplication");
+        servletHolder.setInitParameter("org.restlet.application",MRestletApplication.class.getName());
         servletHolder.setInitParameter("org.restlet.clients", "HTTP FILE CLAP");
         context.addServlet(servletHolder, "/m/*");
 
@@ -71,11 +72,6 @@ public class MJetty {
         setUpStart();
         server.start();
         server.join();
-
-
-
-
-
     }
 
 

@@ -2,7 +2,7 @@ package org.multipoly.restlet.app;
 
 import org.multipoly.restlet.BaseMApplication;
 import org.multipoly.security.MMemoryRealm;
-import org.restlet.engine.header.Header;
+import org.restlet.data.Header;
 import org.restlet.representation.Representation;
 import org.restlet.representation.StringRepresentation;
 import org.restlet.resource.ResourceException;

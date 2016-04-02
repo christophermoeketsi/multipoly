@@ -395,6 +395,6 @@
     </dependencyManagement>
     <properties>
         <umlg.version>1.0.2</umlg.version>
-        <restlet.version>2.2.2</restlet.version>
+        <restlet.version>2.3.4</restlet.version>
     </properties>
 </project>

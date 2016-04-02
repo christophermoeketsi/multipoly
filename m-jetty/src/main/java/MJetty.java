@@ -49,7 +49,7 @@ public class MJetty {
         // Restlet servlet
         ServletHolder servletHolder = new ServletHolder(new ServerServlet());
         servletHolder.setName("MultipolyApplication");
-        servletHolder.setInitParameter("org.restlet.application",MRestletApplication.class.getName());
+        servletHolder.setInitParameter("org.restlet.application",MRestletApplication.class.getName());//This makes sure that the class is loaded!!!
         servletHolder.setInitParameter("org.restlet.clients", "HTTP FILE CLAP");
         context.addServlet(servletHolder, "/m/*");
 

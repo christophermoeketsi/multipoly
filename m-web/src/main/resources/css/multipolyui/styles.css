@@ -9,6 +9,11 @@ td {
     font-family: arial, sans-serif;
     border: 1px solid black;
     text-align: center;
+    width: 72px !important;
+}
+
+td {
+    height: 72px !important;
 }
 
 #setup {
@@ -982,6 +987,108 @@ html, body, .ng-scope {
     z-index: 1;
     color: #ffffff;
 }
+
+
+/*This is the new stuff*/
+
+.orange3{
+    background-image: url('/m/img/game/orange3.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+
+.top_leftcorner {
+    background-image: url('/m/img/game/top_leftconer.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.red1 {
+    background-image: url('/m/img/game/red1.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+
+.top_chance {
+    background-image: url('/m/img/game/top_chance.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.red2 {
+    background-image: url('/m/img/game/red2.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.red3 {
+    background-image: url('/m/img/game/red3.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.station3 {
+    background-image: url('/m/img/game/station3.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+
+.yellow1{
+    background-image: url('/m/img/game/yellow1.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.yellow2{
+    background-image: url('/m/img/game/yellow1.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.util3{
+    background-image: url('/m/img/game/util3.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+
+.yellow3{
+    background-image: url('/m/img/game/yellow3.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+
+.top_rightcorner{
+    background-image: url('/m/img/game/top_rightconter.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.green1{
+    background-image: url('/m/img/game/green1.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+
+
 
 .water{
     flex-direction: column;

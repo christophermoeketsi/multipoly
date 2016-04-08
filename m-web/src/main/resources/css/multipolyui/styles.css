@@ -76,25 +76,6 @@ td {
     float: left;
 }
 
-#jail {
-    border: 1px solid black;
-    height: 64px;
-    width: 64px;
-    position: relative;
-    top: 73px;
-    left: -73px;
-    z-index: 2;
-
-    /*display: block;*/
-    flex-direction: column;
-    /*flex: 1;*/
-    background-image: url('/m/img/game/jail.png');
-    background-repeat: no-repeat;
-    /* background-attachment: fixed;*/
-    /* background-position: 80% 100%;*/
-    background-size: auto;
-    /* z-index: 1;*/
-}
 
 #control {
     position: absolute;
@@ -999,6 +980,72 @@ html, body, .ng-scope {
 }
 
 
+.orange2{
+    background-image: url('/m/img/game/orange2.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+
+.community2{
+    background-image: url('/m/img/game/community2.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+
+.orange1{
+    background-image: url('/m/img/game/orange1.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.train2{
+    background-image: url('/m/img/game/train2.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+
+.purple3{
+    background-image: url('/m/img/game/purple3.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.purple2{
+    background-image: url('/m/img/game/purple2.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.util2{
+    background-image: url('/m/img/game/util2.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.purple1{
+    background-image: url('/m/img/game/purple1.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.bottom_left_corner{
+    background-image: url('/m/img/game/bottom_left_corner.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
 .top_leftcorner {
     background-image: url('/m/img/game/top_leftconer.jpg') !important;
     background-repeat: no-repeat;
@@ -1087,7 +1134,135 @@ html, body, .ng-scope {
     background-size: 100%;
 }
 
+.green2{
+    background-image: url('/m/img/game/green2.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
 
+.community4{
+    background-image: url('/m/img/game/community4.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.green3{
+    background-image: url('/m/img/game/green3.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+
+.train4{
+    background-image: url('/m/img/game/train4.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+
+.chance4{
+    background-image: url('/m/img/game/chance4.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.even_darker_blue2{
+    background-image: url('/m/img/game/even_darker_blue2.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.tax{
+    background-image: url('/m/img/game/tax.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.even_darker_blue3{
+    background-image: url('/m/img/game/even_darker_blue3.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.start{
+    background-image: url('/m/img/game/start.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.dark_blue1{
+    background-image: url('/m/img/game/dark_blue1.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.chance1{
+    background-image: url('/m/img/game/chance1.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.dark_blue2{
+    background-image: url('/m/img/game/dark_blue2.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+._200{
+    background-image: url('/m/img/game/200.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.train1{
+    background-image: url('/m/img/game/train1.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+
+.blue1{
+    background-image: url('/m/img/game/blue1.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+
+.community1{
+    background-image: url('/m/img/game/community1.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.blue2{
+    background-image: url('/m/img/game/blue2.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
+
+.blue3{
+    background-image: url('/m/img/game/blue3.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+}
 
 
 .water{
